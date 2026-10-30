@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ian Ding: C and C++ on Linux, computer science, and a growing curiosity about how computers work.">
   <meta name="theme-color" content="#f2edf9">
-  <title>Ian Ding — A little corner of the internet</title>
+  <title>Ian Ding — Oh no, I got caught! you are a genius!</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -15,6 +15,7 @@
       <a class="wordmark" href="./index.html" aria-label="Ian Ding home">Ian Ding<span>.</span></a>
       <nav aria-label="Main navigation">
         <a href="./index.html#about">About</a>
+        <a href="./now.html">Now</a>
         <a href="./index.html#explore">Explore</a>
         <a href="./notes.html">Notes</a>
         <a href="./projects.html">Projects</a>
@@ -25,7 +26,7 @@
     <main id="main">
       <section class="hero" aria-labelledby="welcome">
       <div class="hero-text">
-        <p class="eyebrow">A little corner of the internet</p>
+        <p class="eyebrow">Oh no, I got caught! you are a genius!</p>
 
         <h1 id="welcome">
           Hi, I'm <span>Ian.</span>
@@ -42,15 +43,18 @@
       </div>
 
       <figure class="hero-portrait">
-        <img
-        class="hero-photo"
-        src="./image/GEM01.jpg"
-        alt="A moment from my life"
-      >
+        <div class="hero-photo-frame">
+          <img
+            class="hero-photo"
+            src="./image/GEM01.jpg"
+            alt="A moment from my life"
+          >
+          <img class="hero-pixel-outline" src="./image/pixel-edge-outline.svg" alt="" aria-hidden="true">
+        </div>
 
         <figcaption>
           <strong>Ian Ding</strong>
-          <span>A space of my own.</span>
+          <span>Just a regular human.</span>
         </figcaption>
       </figure>
     </section>
@@ -61,6 +65,14 @@
           <p>My working days involved building and improving software on Linux with colleagues, chasing bugs, and asking why something was slower than it ought to be. GDB and perf were frequent companions. The bugs were less welcome.</p>
           <p>I'm curious about <span class="rose">C/C++ systems, operating systems, runtimes and memory management</span>, compiler optimisation, and <span class="blue">parallel computing and CPU/GPU performance</span>. Networked systems and practical algorithms also tend to send me down a rabbit hole. I like questions I can explore by building something, measuring it, and finding out which assumption was wrong.</p>
           <p>Alongside my MSc, I'm looking for <strong>Computer Science PhD opportunities starting in 2027</strong> in these areas. More systems to understand, more experiments to run, and presumably a few more bugs to negotiate with. This corner collects the things I learn, make, and haven't quite figured out yet.</p>
+        </div>
+      </section>
+      <section class="profile-section now-summary" aria-labelledby="now-title">
+        <h2 id="now-title" class="section-label">Right now</h2>
+        <div class="profile-body">
+          <h3>Four modules, plenty of tabs open.</h3>
+          <p>This semester at the University of Liverpool, I'm exploring research methods, databases, efficient algorithms and parallel programming. A small collection of notes, questions and things that finally clicked will grow here, one module at a time.</p>
+          <a class="text-link" href="./now.html">See what I'm working on &rarr;</a>
         </div>
       </section>
       <section class="profile-section" aria-labelledby="experience-title">
@@ -174,7 +186,21 @@
         <a href="https://github.com/iianding">Visit my GitHub &nearr;</a>
       </section>
     </main>
-    <footer><span>&copy; Ian Ding</span><span>A small space, made personal.</span></footer>
+    <footer>
+      <span>&copy; Ian Ding</span>
+      <div class="creeper-status" lang="en">
+        <img class="creeper-icon" src="./image/creeper.svg" alt="" width="24" height="24">
+        <div class="creeper-details">
+          <div class="creeper-meter">
+            <span class="creeper-percent" aria-hidden="true">0%</span>
+            <div class="creeper-track" role="progressbar" aria-label="World destruction progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <span class="creeper-fill"></span>
+            </div>
+          </div>
+          <span class="creeper-caption">Blowing up the world (0%)</span>
+        </div>
+      </div>
+    </footer>
   </div>
 </body>
 </html>
