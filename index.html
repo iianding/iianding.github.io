@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The personal website of Ian Ding. A space for notes, ideas, and work in progress.">
+  <meta name="description" content="Ian Ding: C and C++ on Linux, computer science, and a growing curiosity about how computers work.">
   <meta name="theme-color" content="#f2edf9">
   <title>Ian Ding — A little corner of the internet</title>
   <link rel="stylesheet" href="./style.css">
@@ -32,8 +32,8 @@
         </h1>
 
         <p class="lead">
-          A personal space for notes, ideas, and things taking shape.
-          A little work, a little life, and room to grow.
+          Writing C and C++, exploring computer science, and turning
+          &ldquo;how does that work?&rdquo; into just one more experiment.
         </p>
 
         <a class="button" href="#about">
@@ -56,7 +56,89 @@
     </section>
       <section id="about" class="about" aria-labelledby="about-title">
         <h2 id="about-title" class="section-label">01 / About me</h2>
-        <p>I'm <strong>Ian Ding</strong>. This is my personal home on the web: a place for <span class="teal">things I learn</span>, <span class="rose">ideas I explore</span>, and <span class="blue">work I want to share</span>. I'm starting small and adding to it along the way.</p>
+        <div class="about-story">
+          <p>I'm <strong>Ian Ding</strong>, a physics graduate from Heilongjiang University, China, who took a detour into <span class="teal">C, C++ and Linux</span>. After nearly four years at a certain software company in China, I'm back in student mode, studying for an MSc in Computer Science at the University of Liverpool, United Kingdom.</p>
+          <p>My working days involved building and improving software on Linux with colleagues, chasing bugs, and asking why something was slower than it ought to be. GDB and perf were frequent companions. The bugs were less welcome.</p>
+          <p>I'm curious about <span class="rose">C/C++ systems, operating systems, runtimes and memory management</span>, compiler optimisation, and <span class="blue">parallel computing and CPU/GPU performance</span>. Networked systems and practical algorithms also tend to send me down a rabbit hole. I like questions I can explore by building something, measuring it, and finding out which assumption was wrong.</p>
+          <p>Alongside my MSc, I'm looking for <strong>Computer Science PhD opportunities starting in 2027</strong> in these areas. More systems to understand, more experiments to run, and presumably a few more bugs to negotiate with. This corner collects the things I learn, make, and haven't quite figured out yet.</p>
+        </div>
+      </section>
+      <section class="profile-section" aria-labelledby="experience-title">
+        <h2 id="experience-title" class="section-label">02 / Working chapters</h2>
+        <div class="profile-body">
+          <div class="experience-heading">
+            <h3>C++ Development Engineer</h3>
+            <span class="small">2021 &ndash; 2025</span>
+          </div>
+          <p class="profile-meta">A certain software company &middot; China &middot; C/C++ on Linux</p>
+          <p>Nearly four years across four Linux-based C/C++ software projects: reading existing code, adding features, working through rewrites with colleagues, and keeping things running beyond my own machine. The deployment environment had a vote, too.</p>
+          <ul class="experience-list">
+            <li>Developed and extended C/C++ modules on Linux for data processing, routing, scheduling and interface integration.</li>
+            <li>Handled deployment, testing and maintenance in real Linux environments, including dependencies, build configuration and operational shell scripts.</li>
+            <li>Used GDB, perf and Wireshark to investigate runtime issues, processing overhead and messages that looked almost right. Almost is quite a long way from right in a binary protocol.</li>
+            <li>Worked with developers and test engineers on integration and fixes, and helped new colleagues navigate the code through diagrams and explanations.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="profile-section" aria-labelledby="builds-title">
+        <h2 id="builds-title" class="section-label">03 / A few things I've worked on</h2>
+        <div class="profile-body">
+          <article class="project-summary">
+            <p class="profile-kicker teal">AT WORK &middot; LINUX &middot; DATA PROCESSING</p>
+            <h3>Getting data to the right place</h3>
+            <p>In one Linux-based C/C++ data-distribution system, I worked on message validation and assembly, routing, configuration and timed tasks. During a major rewrite with a colleague, I took responsibility for the core processing program.</p>
+            <p>The less visible part: deploying and testing it on Linux, examining function costs with perf, adjusting processing logic and CPU affinity, and using jemalloc for memory allocation. Asking a program to be faster is easy; finding out where the time goes takes a little more detective work.</p>
+          </article>
+          <article class="project-summary">
+            <p class="profile-kicker rose">AT WORK &middot; LINUX &middot; INTEGRATION</p>
+            <h3>Making different systems agree</h3>
+            <p>Across other Linux-based C/C++ data-processing tools, I extended modules, adapted interfaces and data formats, and supported testing and deployment. Integration often meant checking captured traffic byte by byte, tracking down endianness and format mismatches, and coordinating fixes with other developers. Two programs can disagree over surprisingly small things.</p>
+          </article>
+          <article class="project-summary">
+            <p class="profile-kicker blue">EARLIER &middot; LINUX &middot; TRAINING PROJECTS</p>
+            <h3>Learning by wiring things together</h3>
+            <p>Earlier C/C++ training on Linux included contributions to a file-transfer service and a text-search tool: file operations, resumable transfers, a word-suggestion dictionary, and thread-pool and Reactor frameworks based on established designs. A practical introduction to sockets, concurrency and all the ways pieces can fail to fit.</p>
+          </article>
+        </div>
+      </section>
+      <section class="profile-section" aria-labelledby="toolbox-title">
+        <h2 id="toolbox-title" class="section-label">04 / My usual toolbox</h2>
+        <div class="profile-body">
+          <p>A few tools I've used while developing, debugging and deploying on Linux. No proficiency bars: a debugger has never asked me how much C or C++ I know.</p>
+          <dl class="toolbox">
+            <div>
+              <dt>Code &amp; concurrency</dt>
+              <dd>C, C++ (mainly C++11 and earlier), STL, shell scripting, threads, synchronisation, CPU affinity and socket programming.</dd>
+            </div>
+            <div>
+              <dt>Finding out what happened</dt>
+              <dd>GDB, perf and Wireshark; runtime debugging, performance investigation and interface testing.</dd>
+            </div>
+            <div>
+              <dt>Building &amp; running</dt>
+              <dd>Linux, GCC, Makefiles, CMake, dependency setup, deployment and operational scripts.</dd>
+            </div>
+            <div>
+              <dt>Libraries &amp; data</dt>
+              <dd>Poco, ZeroMQ, Kafka, Redis, MySQL, Protocol Buffers, JSON/CSV processing and jemalloc.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+      <section class="profile-section" aria-labelledby="learning-title">
+        <h2 id="learning-title" class="section-label">05 / Back in learning mode</h2>
+        <div class="profile-body">
+          <article class="learning-entry">
+            <h3>MSc Computer Science <span class="small">&middot; In progress</span></h3>
+            <p class="profile-meta">University of Liverpool &middot; United Kingdom</p>
+            <p>Research methods, databases, efficient algorithms and parallel programming are on the menu. Familiar tools, fresh questions, and more reasons to wonder what the CPU is actually doing.</p>
+          </article>
+          <article class="learning-entry">
+            <h3>BSc Physics <span class="small">&middot; The starting point</span></h3>
+            <p class="profile-meta">Heilongjiang University &middot; China</p>
+            <p>My undergraduate work included modelling acoustic behaviour in periodic materials with COMSOL, varying parameters and comparing simulation results. Before debugging software, there were simulations to make sense of.</p>
+          </article>
+        </div>
       </section>
       <section id="explore" class="explore" aria-labelledby="explore-title">
         <div class="section-head">
