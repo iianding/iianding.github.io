@@ -1,0 +1,502 @@
+{
+  "albums": [
+    {
+      "city": "chester",
+      "location": "Chester · United Kingdom",
+      "date": "2026-09-13",
+      "title": "Chester, at camera speed.",
+      "description": "Old streets, unexpected squirrels, and a camera that kept finding one more reason to stop.",
+      "section_title": "A slow walk, with excellent distractions.",
+      "signoff": "Chester, 13 September 2026. The squirrels were not on the itinerary.",
+      "cover": "DSC02541",
+      "cover_center": [
+        0.5,
+        0.7
+      ],
+      "photos": [
+        {
+          "file": "DSC02532-20260913.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "Passengers waiting beside the brick station building at Chester",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02540-20260913.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "Two people sharing an umbrella outside a Chester building",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02541-20260913.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "An ornate clock with green metalwork above a Chester street",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02536-20260913.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A person in a blue jacket walking a dog beside a red-brick wall",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02549-20260913.webp",
+          "width": 2400,
+          "height": 1601,
+          "alt": "A black-and-white view of ornate stone cathedral walls and towers",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02564-20260913.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A stone arched doorway surrounded by flowering plants",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02568-20260913.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A black-and-white close-up of carved wooden seating",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02563-20260913.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A dark stone cross rising against a pale sky",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02572-20260913.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A person working behind a warmly lit bar",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02569-20260913.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A warmly lit pub interior with wooden chairs and hanging lights",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02577-20260913.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A street musician playing guitar beside a brick wall",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02581-20260913.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A squirrel sitting upright in vivid green grass",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02582-20260913.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A squirrel holding food in the grass",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02584-20260913.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A squirrel on a tree trunk against softly blurred leaves",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02595-20260913.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A gull perched on a decorative post beside the water",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC02598-20260913.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A person feeding a crowd of pigeons and gulls beside a bench",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02604-20260913.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "Two people and a dog walking beside a brick wall",
+          "layout": "landscape"
+        }
+      ],
+      "cover_alt": "An ornate clock with green metalwork above a Chester street"
+    },
+    {
+      "city": "crosby",
+      "location": "Crosby Beach · United Kingdom",
+      "date": "2026-08-22",
+      "title": "A shore thing.",
+      "description": "Crosby Beach, where the statues stayed put and everything else had somewhere to be.",
+      "section_title": "Same beach. A different light.",
+      "signoff": "Crosby Beach, 22 August 2026. The tide had the last word.",
+      "cover": "DSC02502",
+      "cover_center": [
+        0.55,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC02463-20260822.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "An open stretch of Crosby Beach beneath clouds, with offshore wind turbines",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02461-20260822.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A person and a dog walking along Crosby Beach near a standing statue",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02494-20260822.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A sandy shoreline with wind turbines and a distant white structure",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02473-20260822.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A curving shoreline and distant buildings beside blue water",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02465-20260822.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "Footprints and rippled patterns in pale beach sand",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02468-20260822.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A small white aircraft against a clear blue sky",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02474-20260822.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A black-and-white seaside statue with a bird perched on its head",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02497-20260822.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A black-and-white beach statue facing the sand and distant beach huts",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02493-20260822.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A gull standing in shallow blue water",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02481-20260822.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A ship beneath clouds and a bright patch of sunlight at sea",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02504-20260822.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "Two people walking towards the sunlight along the beach",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02502-20260822.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "People and dogs crossing wet sand in low golden sunlight",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02519-20260822.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "An orange sun setting over the sea beneath dark clouds",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02530-20260822.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "Beachfront buildings beneath purple and blue evening clouds",
+          "layout": "landscape"
+        }
+      ],
+      "cover_alt": "People and dogs crossing wet sand in low golden sunlight"
+    },
+    {
+      "city": "liverpool",
+      "location": "Liverpool · United Kingdom",
+      "date": "2026-08-09",
+      "title": "Looking up. Way up.",
+      "description": "Liverpool Cathedral: very high ceilings, very small humans, and a camera doing its best to fit it all in.",
+      "section_title": "A little perspective. Quite a lot of ceiling.",
+      "signoff": "Liverpool Cathedral, 9 August 2026. Plenty of reasons to look up.",
+      "cover": "DSC02435",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC02432-20260809_1.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "Liverpool Cathedral rising above a sunlit city street",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02435-20260809.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "Visitors in the warm light of Liverpool Cathedral beneath stained-glass windows",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02444-20260809.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "Carved figures on cathedral columns lit by warm light",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02451-20260809.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A tall view through the cathedral nave towards an ornate altar and stained glass",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02437-20260809.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "Ribbed stone vaults and stained-glass windows seen from directly below",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02456-20260809.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A candlelit religious statue in a dark cathedral interior",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "Visitors in the warm light of Liverpool Cathedral beneath stained-glass windows"
+    },
+    {
+      "city": "manchester",
+      "location": "Manchester · United Kingdom",
+      "date": "2026-07-25",
+      "title": "First stop: Manchester.",
+      "description": "A first visit, a few detours, and a camera with no sense of urgency.",
+      "section_title": "One train ride. Plenty to look at.",
+      "signoff": "Manchester, 25 July 2026. A few detours well spent.",
+      "cover": "DSC02401",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC02385-20260725.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "Passengers beside a train on a busy station platform",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02388-20260725.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A person in a red shirt resting beside a dog on the pavement",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02393-20260725.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "Tall glass buildings framing a narrow Manchester street",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02391-20260725.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A stone clock tower beside scaffolding in Manchester",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02401-20260725.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "Three footballer statues outside a building with Manchester United signage",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02411-20260725.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A red-brick building and a white aircraft trail against blue sky",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02416-20260725.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A black-and-white photograph of a person pulling a suitcase past a stone doorway",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02419-20260725.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A street drummer sitting beneath leafy trees",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC02423-20260725.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A train approaching a curved station platform",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "Three footballer statues outside a building with Manchester United signage"
+    },
+    {
+      "city": "liverpool",
+      "location": "Liverpool · United Kingdom",
+      "date": "2026-07-08",
+      "title": "First frames. Many distractions.",
+      "description": "A first outing with the camera in Liverpool. Statues, side streets, and a seagull determined to be included.",
+      "section_title": "A city, one frame at a time.",
+      "signoff": "Liverpool, 8 July 2026. More to notice next time.",
+      "cover": "DSC02131",
+      "cover_alt": "Black-and-white photograph of an equestrian statue outside a classical building in Liverpool",
+      "cover_center": [
+        0.5,
+        0.4
+      ],
+      "photos": [
+        {
+          "file": "DSC02115-20260708.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "A seagull perched on a dark brick rooftop beneath a clear blue sky",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02123-20260708.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A statue and the Radio City Tower framed by stone buildings in Liverpool",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02128-20260708.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A green bronze statue against a pale blue sky",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02124-20260708.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "Purple bins beneath a yellow graffiti character on a weathered Liverpool wall",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02131-20260708.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A black-and-white view of an equestrian statue and classical columns",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02132-20260708.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A closer black-and-white view of a rider and rearing horse statue",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02140-20260708.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A black-and-white statue beside a tall classical colonnade",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02149-20260708.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A clock tower framed by a narrow street in black and white",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02153-20260708.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A red bin beside a stone street corner in a mostly black-and-white photograph",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02165-20260708.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "People walking between tall buildings along a Liverpool street in golden light",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02150-20260708.webp",
+          "width": 2400,
+          "height": 1350,
+          "alt": "Two people sitting on a bench under trees in warm evening light",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC02159-20260708.webp",
+          "width": 2400,
+          "height": 2400,
+          "alt": "Warm sunlight falling along a busy Liverpool street",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC02166-20260708.webp",
+          "width": 1601,
+          "height": 2400,
+          "alt": "A stone church tower glowing in low sunlight beneath a deep blue sky",
+          "layout": "portrait"
+        }
+      ]
+    }
+  ]
+}

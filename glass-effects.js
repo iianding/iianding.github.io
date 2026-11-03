@@ -1,6 +1,8 @@
 (() => {
   'use strict';
 
+  if (typeof window.matchMedia !== 'function') return;
+
   const preciseHover = window.matchMedia('(hover: hover) and (pointer: fine)');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const enabled = () => preciseHover.matches && !reducedMotion.matches;
@@ -48,10 +50,16 @@
   });
 
   const resetAll = () => resetters.forEach((reset) => reset());
-  preciseHover.addEventListener('change', resetAll);
-  reducedMotion.addEventListener('change', resetAll);
+  const watchMedia = (query) => {
+    if (typeof query.addEventListener === 'function') query.addEventListener('change', resetAll);
+    else if (typeof query.addListener === 'function') query.addListener(resetAll);
+  };
+  watchMedia(preciseHover);
+  watchMedia(reducedMotion);
   window.addEventListener('blur', resetAll);
   window.addEventListener('pagehide', resetAll);
+  window.addEventListener('resize', resetAll, { passive: true });
+  window.addEventListener('scroll', resetAll, { passive: true, capture: true });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) resetAll();
   });

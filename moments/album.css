@@ -1,0 +1,63 @@
+/* Album photographs share the site's clear glass rim without changing the image. */
+.album-intro h1 { font-size: clamp(32px, 5.4vw, 60px); line-height: 1.2; }
+.album-intro .lead { max-width: 650px; }
+.album-opening { margin-top: 36px; }
+.album-sequence { margin-top: 44px; }
+.album-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.album-photo.glass-surface { display: block; min-width: 0; padding: 8px; overflow: hidden; border-radius: 28px; cursor: zoom-in; transition: border-color .2s ease, box-shadow .2s ease; }
+.album-photo-portrait { aspect-ratio: 2 / 3; }
+.album-photo-wide { grid-column: 1 / -1; aspect-ratio: var(--photo-ratio, 16 / 9); }
+.album-photo-landscape { aspect-ratio: var(--photo-ratio, 16 / 9); }
+.album-photo-solo { grid-column: 1 / -1; justify-self: center; width: min(100%, 640px); }
+.album-photo img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
+.album-photo:hover { border-color: rgba(113, 59, 193, .22); box-shadow: var(--glass-rim), inset 0 0 0 1px rgba(113, 59, 193, .04); }
+.album-photo:focus-visible { border-radius: 28px; outline-offset: 5px; }
+.album-photo > .glass-glint { z-index: 2; }
+.album-photo::before { z-index: 3; }
+.album-photo[data-glass-active] > .glass-glint { opacity: .28; }
+.album-signoff { margin: 36px 0 0; color: var(--muted); font-size: 12px; text-align: center; }
+.album-return { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); }
+.album-return .text-link { font-size: 13px; }
+
+/* A native modal keeps keyboard focus inside the full-frame viewer. */
+body.photo-viewer-open { overflow: hidden; }
+.photo-viewer { width: min(1280px, calc(100% - 40px)); height: calc(100vh - 40px); height: calc(100dvh - 40px); max-width: none; max-height: none; margin: auto; padding: 18px 22px; border: 1px solid rgba(255, 255, 255, .48); border-radius: 30px; color: white; background: linear-gradient(145deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, .035)); box-shadow: 0 16px 70px rgba(0, 0, 0, .2), inset 0 1px 1px rgba(255, 255, 255, .32); -webkit-backdrop-filter: blur(18px) saturate(120%); backdrop-filter: blur(18px) saturate(120%); }
+.photo-viewer:not([open]) { display: none; }
+.photo-viewer[open] { display: flex; flex-direction: column; gap: 16px; }
+.photo-viewer::backdrop { background: rgba(12, 12, 16, .84); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.viewer-toolbar, .viewer-footer { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+.viewer-title { min-width: 0; margin: 0; font-size: 13px; font-weight: 500; overflow-wrap: break-word; }
+.viewer-count { flex-shrink: 0; margin: 0 0 0 auto; color: rgba(255, 255, 255, .72); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.viewer-control.glass-surface { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border-radius: 50%; color: white; font: inherit; font-size: 22px; line-height: 1; cursor: pointer; touch-action: manipulation; background: rgba(255, 255, 255, .09); }
+.viewer-control:hover { background: rgba(255, 255, 255, .18); }
+.viewer-control[data-glass-active] > .glass-glint { opacity: .18; }
+.viewer-control:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+.viewer-stage { display: flex; align-items: center; justify-content: center; position: relative; flex: 1; min-height: 0; overflow: hidden; }
+.viewer-stage img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 12px; }
+.viewer-stage [hidden] { display: none; }
+.viewer-status { position: absolute; margin: 0; color: rgba(255, 255, 255, .8); font-size: 14px; text-align: center; }
+.viewer-footer { justify-content: space-between; }
+.viewer-caption { min-width: 0; max-width: 720px; margin: 0; color: rgba(255, 255, 255, .76); font-size: 12px; line-height: 1.5; text-align: center; overflow-wrap: break-word; }
+@media (max-width: 760px) {
+  .album-grid { gap: 18px; }
+  .album-opening { margin-top: 28px; }
+  .album-sequence { margin-top: 32px; }
+  .album-photo.glass-surface { padding: 6px; border-radius: 22px; }
+  .album-photo img { border-radius: 16px; }
+  .photo-viewer { width: calc(100% - 16px); height: calc(100vh - 16px); height: calc(100dvh - 16px); padding: 12px; border-radius: 24px; }
+  .viewer-caption { font-size: 11px; }
+  .album-return { gap: 16px; }
+}
+@media (max-width: 600px) {
+  .album-grid { grid-template-columns: minmax(0, 1fr); }
+  /* Full natural composition is restored when paired images stack on phones. */
+  .album-grid .album-photo { aspect-ratio: auto; }
+  .album-grid .album-photo img { height: auto; }
+  .album-return { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .album-photo { transition: none; }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .photo-viewer { background: #242329; }
+}
