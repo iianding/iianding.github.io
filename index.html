@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ian Ding: C and C++ on Linux, computer science, and a growing curiosity about how computers work.">
   <meta name="theme-color" content="#f2edf9">
-  <title>Ian Ding — Oh no, I got caught! you are a genius!</title>
+  <title>Ian Ding — Oh no, you found me!</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -13,28 +13,27 @@
   <div class="wrap">
     <header>
       <a class="wordmark" href="./index.html" aria-label="Ian Ding home">Ian Ding<span>.</span></a>
-      <nav aria-label="Main navigation">
-        <a href="./index.html#about">About</a>
+      <nav class="header-nav" aria-label="Main navigation">
         <a href="./now.html">Now</a>
-        <a href="./index.html#explore">Explore</a>
         <a href="./notes.html">Notes</a>
         <a href="./projects.html">Projects</a>
         <a href="./moments.html">Moments</a>
-        <a href="./index.html#contact">Find me</a>
+        <a class="nav-contact" href="./index.html#contact">Find me</a>
       </nav>
     </header>
     <main id="main">
       <section class="hero" aria-labelledby="welcome">
       <div class="hero-text">
-        <p class="eyebrow">Oh no, I got caught! you are a genius!</p>
+        <p class="eyebrow">Oh no, you found me!</p>
 
         <h1 id="welcome">
           Hi, I'm <span>Ian.</span>
         </h1>
 
         <p class="lead">
-          Writing C and C++, exploring computer science, and turning
-          &ldquo;how does that work?&rdquo; into just one more experiment.
+          Writing C and C++, learning Python, finding out what makes computers tick
+          (and occasionally what makes them <span class="villager-aside">stop <img class="villager-icon" src="./image/puzzled-villager.svg" width="28" height="26" alt="Puzzled Minecraft villager" title="Hrrm?"></span>), and giving my computer
+          new and interesting ways to complain.
         </p>
 
         <a class="button" href="#about">
@@ -62,9 +61,9 @@
         <h2 id="about-title" class="section-label"><span class="section-number">01 /</span> About me</h2>
         <div class="about-story">
           <p>I'm <strong>Ian Ding</strong>, a physics graduate from Heilongjiang University, China, who took a detour into <span class="teal">C, C++ and Linux</span>. As a kid, I was fascinated by astronomy and astrophysics; my physics degree later taught me that understanding the universe involves rather more maths than looking up at it. <em>Interstellar</em> is still my favourite film, but computers gradually became the other universe I wanted to explore.</p>
-          <p>After nearly four years at a certain software company in China, I'm back in student mode, studying for an MSc in Computer Science at the University of Liverpool, United Kingdom. My working days involved building and improving software on Linux with colleagues, chasing bugs, and asking why something was slower than it ought to be. GDB and perf were frequent companions. The bugs were less welcome.</p>
+          <p>After nearly four years at a certain software company in China, I'm back in student mode, studying for an MSc in Computer Science at the University of Liverpool, United Kingdom. My working days involved building and improving software on Linux with colleagues, chasing bugs, and asking why something was slower than it ought to be. GDB and perf were frequent companions. The bugs were less <span class="mc-aside">welcome. <img class="mc-icon" src="./image/mc-silverfish.svg" width="24" height="24" alt="" aria-hidden="true" title="A bug in the system"></span> These days, I'm also learning <span class="teal">Python</span>, getting used to life with fewer braces and more meaningful spaces.</p>
           <p>I'm curious about <span class="rose">C/C++ systems, operating systems, runtimes and memory management</span>, compiler optimisation, and <span class="blue">parallel computing and CPU/GPU performance</span>. Networked systems and practical algorithms also tend to send me down a rabbit hole. I like questions I can explore by building something, measuring it, and finding out which assumption was wrong. Alongside my MSc, I'm looking for <strong>Computer Science PhD opportunities starting in 2027</strong> in these areas. More systems to understand, more experiments to run, and presumably a few more bugs to negotiate with.</p>
-          <p>Over the past few years, <span class="teal">photography</span> has become another way of paying attention: landscapes, architecture, and people going about their lives. Some moments deserve a photograph before they become a vague &ldquo;you had to be there.&rdquo; I also enjoy PC games and investigating gadgets, smart devices and computer hardware. I used to happily disappear into research on headphones and speakers, but I've since retired from chasing the next audio upgrade &mdash; my ears and wallet have agreed to a truce.</p>
+          <p>Over the past few years, <span class="teal">photography</span> has become another way of paying attention: landscapes, architecture, and people going about their lives. Some moments deserve a photograph before they become a vague &ldquo;you had to be there.&rdquo; I also enjoy PC games and investigating gadgets, smart devices and computer hardware. I used to happily disappear into research on headphones and speakers, but I've since retired from chasing the next audio upgrade &mdash; my ears and wallet have agreed to a <span class="mc-aside">truce. <img class="mc-icon" src="./image/mc-emerald.svg" width="24" height="24" alt="" aria-hidden="true" title="Emeralds saved"></span></p>
           <p>Away from screens, I still have a soft spot for <span class="blue">inline skating and table tennis</span>, favourites from my earlier years, with ice skating and skiing also on the list. Apparently, sitting still was never going to cover all my hobbies. This corner collects the things I learn, make, notice, and haven't quite figured out yet. Expect a little code, a few photographs, and the occasional detour.</p>
         </div>
       </section>
@@ -97,7 +96,7 @@
             <p class="profile-kicker teal">AT WORK &middot; LINUX &middot; DATA PROCESSING</p>
             <h3>Getting data to the right place</h3>
             <p>In one Linux-based C/C++ data-distribution system, I worked on message validation and assembly, routing, configuration and timed tasks. During a major rewrite with a colleague, I took responsibility for the core processing program.</p>
-            <p>The less visible part: deploying and testing it on Linux, examining function costs with perf, adjusting processing logic and CPU affinity, and using jemalloc for memory allocation. Asking a program to be faster is easy; finding out where the time goes takes a little more detective work.</p>
+            <p>The less visible part: deploying and testing it on Linux, examining function costs with perf, adjusting processing logic and CPU affinity, and using jemalloc for memory allocation. Asking a program to be faster is easy; finding out where the time goes takes a little more detective <span class="mc-aside">work. <img class="mc-icon" src="./image/mc-spyglass.svg" width="24" height="24" alt="" aria-hidden="true" title="Looking for the bottleneck"></span></p>
           </article>
           <article class="project-summary">
             <p class="profile-kicker rose">AT WORK &middot; LINUX &middot; INTEGRATION</p>
@@ -114,7 +113,7 @@
       <section class="profile-section" aria-labelledby="toolbox-title">
         <h2 id="toolbox-title" class="section-label"><span class="section-number">05 /</span> My usual toolbox</h2>
         <div class="profile-body">
-          <p>A few tools I've used while developing, debugging and deploying on Linux. No proficiency bars: a debugger has never asked me how much C or C++ I know.</p>
+          <p>A few tools I've used while developing, debugging and deploying on Linux. No proficiency bars: a debugger has never asked me how much C or C++ I <span class="mc-aside">know. <img class="mc-icon" src="./image/mc-experience-orb.svg" width="24" height="24" alt="" aria-hidden="true" title="Experience earned the hard way"></span></p>
           <dl class="toolbox">
             <div>
               <dt>Code &amp; concurrency</dt>
@@ -152,27 +151,27 @@
       </section>
       <section id="explore" class="explore" aria-labelledby="explore-title">
         <div class="section-head">
-          <h2 id="explore-title">Room for what's next.</h2>
-          <span class="small">A few things to come</span>
+          <h2 id="explore-title">Other ways to lose track of time.</h2>
+          <span class="small">My computer needed a break from me.</span>
         </div>
         <div class="grid">
           <a class="card card-link notes" href="./notes.html">
-            <span class="number rose">01 / WORDS</span>
-            <h3 class="rose">Notes &amp; ideas</h3>
-            <p>A place for learning notes, passing thoughts, and ideas worth keeping.</p>
-            <div class="status rose">Explore &rarr;</div>
+            <div class="card-meta"><span class="card-index">01</span><span class="card-category">Wonder</span></div>
+            <h3 class="rose">Notes</h3>
+            <p>Things I learn and ideas I keep.</p>
+            <div class="status"><span>Explore</span><span class="card-arrow" aria-hidden="true">&nearr;</span></div>
           </a>
           <a class="card card-link projects" href="./projects.html">
-            <span class="number teal">02 / WORK</span>
-            <h3 class="teal">Things I make</h3>
-            <p>A space to collect personal projects, experiments, and work in progress.</p>
-            <div class="status teal">Explore &rarr;</div>
+            <div class="card-meta"><span class="card-index">02</span><span class="card-category">Wrangle</span></div>
+            <h3 class="teal">Projects</h3>
+            <p>Things I build and experiments I try.</p>
+            <div class="status"><span>Explore</span><span class="card-arrow" aria-hidden="true">&nearr;</span></div>
           </a>
           <a class="card card-link moments" href="./moments.html">
-            <span class="number blue">03 / LIFE</span>
-            <h3 class="blue">In between</h3>
-            <p>Room for photographs, small discoveries, and moments from everyday life.</p>
-            <div class="status blue">Explore &rarr;</div>
+            <div class="card-meta"><span class="card-index">03</span><span class="card-category">Wander</span></div>
+            <h3 class="blue">Moments</h3>
+            <p>Photos and little things I notice.</p>
+            <div class="status"><span>Explore</span><span class="card-arrow" aria-hidden="true">&nearr;</span></div>
           </a>
         </div>
       </section>
