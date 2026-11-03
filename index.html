@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ian Ding: C and C++ on Linux, computer science, and a growing curiosity about how computers work.">
-  <meta name="theme-color" content="#f2edf9">
+  <meta name="theme-color" content="#ffffff">
   <title>Ian Ding — Oh no, you found me!</title>
   <link rel="stylesheet" href="./style.css">
+  <script src="./glass-effects.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -18,7 +19,7 @@
         <a href="./notes.html">Notes</a>
         <a href="./projects.html">Projects</a>
         <a href="./moments.html">Moments</a>
-        <a class="nav-contact" href="./index.html#contact">Find me</a>
+        <a class="nav-contact" href="./index.html#contact"><img class="nav-compass" src="./image/mc-compass.svg" width="20" height="20" alt="" aria-hidden="true" title="This way">Find me</a>
       </nav>
     </header>
     <main id="main">
@@ -37,18 +38,19 @@
         </p>
 
         <a class="button" href="#about">
-          A little about me &darr;
+          <span>Who&rsquo;s behind the bugs?</span>
+          <span class="button-arrow" aria-hidden="true">&darr;</span>
         </a>
       </div>
 
       <figure class="hero-portrait">
-        <div class="hero-photo-frame">
+        <div class="hero-photo-frame glass-surface">
           <img
             class="hero-photo"
             src="./image/GEM01.jpg"
             alt="A moment from my life"
+            draggable="false"
           >
-          <img class="hero-pixel-outline" src="./image/pixel-edge-outline.svg" alt="" aria-hidden="true">
         </div>
 
         <figcaption>
@@ -114,7 +116,7 @@
         <h2 id="toolbox-title" class="section-label"><span class="section-number">05 /</span> My usual toolbox</h2>
         <div class="profile-body">
           <p>A few tools I've used while developing, debugging and deploying on Linux. No proficiency bars: a debugger has never asked me how much C or C++ I <span class="mc-aside">know. <img class="mc-icon" src="./image/mc-experience-orb.svg" width="24" height="24" alt="" aria-hidden="true" title="Experience earned the hard way"></span></p>
-          <dl class="toolbox">
+          <dl class="toolbox glass-surface">
             <div>
               <dt>Code &amp; concurrency</dt>
               <dd>C, C++ (mainly C++11 and earlier), STL, shell scripting, threads, synchronisation, CPU affinity and socket programming.</dd>
@@ -155,19 +157,19 @@
           <span class="small">My computer needed a break from me.</span>
         </div>
         <div class="grid">
-          <a class="card card-link notes" href="./notes.html">
+          <a class="card card-link notes glass-surface" href="./notes.html">
             <div class="card-meta"><span class="card-index">01</span><span class="card-category">Wonder</span></div>
             <h3 class="rose">Notes</h3>
             <p>Things I learn and ideas I keep.</p>
             <div class="status"><span>Explore</span><span class="card-arrow" aria-hidden="true">&nearr;</span></div>
           </a>
-          <a class="card card-link projects" href="./projects.html">
+          <a class="card card-link projects glass-surface" href="./projects.html">
             <div class="card-meta"><span class="card-index">02</span><span class="card-category">Wrangle</span></div>
             <h3 class="teal">Projects</h3>
             <p>Things I build and experiments I try.</p>
             <div class="status"><span>Explore</span><span class="card-arrow" aria-hidden="true">&nearr;</span></div>
           </a>
-          <a class="card card-link moments" href="./moments.html">
+          <a class="card card-link moments glass-surface" href="./moments.html">
             <div class="card-meta"><span class="card-index">03</span><span class="card-category">Wander</span></div>
             <h3 class="blue">Moments</h3>
             <p>Photos and little things I notice.</p>
