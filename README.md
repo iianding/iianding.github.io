@@ -52,4 +52,6 @@ For a travel article, copy an `index.html` draft from `moments/_templates/<templ
 
 Album images use small previews during browsing and load the larger web-sized file when opened. Keep original source backups outside the published website.
 
-The generated album pages and Moments directory include content versions for their shared styles and scripts. Re-run `python3 scripts/build_albums.py` after changing those assets so browsers load the updated appearance and interactions. Photo pages use a slightly lighter glass header to keep navigation readable over dark photographs.
+Current photo sizes are capped at 2160px on the long edge for full-frame WebP files and 1080px for previews; directory covers are 864×648px. Use original source photographs when preparing future additions. The album's photo order, crop choices and desktop pairings are curated independently of these file sizes.
+
+The generated album pages and Moments directory include content versions for their styles, scripts and photographs. Re-run `python3 scripts/build_albums.py` after changing those assets so browsers load the updated files. Photo pages use a slightly lighter glass header to keep navigation readable over dark photographs.

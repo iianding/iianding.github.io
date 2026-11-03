@@ -60,8 +60,8 @@ def display_date(album):
 
 def photo_markup(photo, album, page, first=False):
     folder = asset_folder(album)
-    full = relative(folder / photo["file"], page)
-    preview = relative(folder / "previews" / photo["file"], page)
+    full = versioned_asset(folder / photo["file"], page)
+    preview = versioned_asset(folder / "previews" / photo["file"], page)
     layout = photo["layout"]
     classes = "album-photo-portrait album-photo-solo" if layout == "solo" else "album-photo-" + layout
     ratio = f' style="--photo-ratio: {photo["width"]} / {photo["height"]}"' if layout in ("wide", "landscape") else ""
@@ -178,7 +178,7 @@ def collection_card(album, index):
                 </div>
               </div>
               <figure class="moment-photo glass-surface">
-                <img src="{relative(asset_folder(album) / 'previews/cover.webp', COLLECTION)}" width="960" height="720" alt="{escape(album['cover_alt'], quote=True)}" {loading} decoding="async">
+                <img src="{versioned_asset(asset_folder(album) / 'previews/cover.webp', COLLECTION)}" width="{album.get('cover_width', 960)}" height="{album.get('cover_height', 720)}" alt="{escape(album['cover_alt'], quote=True)}" {loading} decoding="async">
               </figure>
             </a>
           </li>'''
