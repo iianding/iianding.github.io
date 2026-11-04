@@ -1,6 +1,11 @@
+# GitHub workflow
+
+- Make local edits and checks by default. Create commits or push to GitHub only when the user explicitly requests it for the current change; earlier publishing requests do not authorize later commits or pushes.
+
 # Website content
 
 - Keep all visitor-facing website content in English, including navigation, captions, placeholders, page metadata, and accessibility labels. This applies to future additions and edits.
+- Keep detailed research and module overviews inside their individual course pages. The Now page retains its original short, humorous course introductions, without a separate research-progress card, unless the user requests a different arrangement.
 
 # Page hierarchy
 
@@ -31,3 +36,10 @@
 - The footer in `moments/index.html` is the shared source. `scripts/build_albums.py` rebases it onto every page and refreshes the shared asset versions. Generated albums inherit their heart controls automatically, including future albums.
 - When adding an album, also sync its ID, title, location, date and page path into `../website-community-service/app/admin/albums.json` and publish that service before the new album's heart controls go live. This catalog supplies the private dashboard and restricts writes to published albums.
 - Localhost uses the local database service on port 5173. Do not send local QA visits or likes to production. File browsing keeps the static site usable and displays no invented counts. Draft templates must not register visits.
+- Notes can reuse the same heart controls and tables with an allowed dated ID such as `note-eight-sorts-2026-11-04`. Register note metadata in `../website-community-service/app/admin/notes.json`; publishing frontend and backend changes still requires the user's explicit instruction.
+
+# Sorting note
+
+- The note lives at `notes/sorting/index.html`. Run `python3 scripts/build_sorting_note.py` after changing its descriptions, examples or local assets. `scripts/sorting-examples.json` is the source for all 32 examples; the generated classic script must also work with file browsing.
+- Keep the demos dependency-free and local to the browser. Limit each list to 20 values, magnitude below 1,000,000 and at most three decimal places. Only one lazy step generator and one timer may run at a time; pause when hidden or off screen. Do not add background polling or server execution for sorting.
+- Use the stated variants consistently: early-exit bubble, ordinary selection/insertion, halving-gap Shell, bottom-up stable merge, last-pivot Lomuto quicksort, iterative heap and stable four-byte signed radix. Explain space, stability and variant-dependent bounds accurately.

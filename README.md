@@ -15,6 +15,7 @@ now/
     comp526/index.html
     comp528/index.html
 notes/index.html
+  sorting/index.html
 projects/index.html
 moments/index.html
 ```
@@ -65,3 +66,13 @@ Every album has a glass heart button on its cover and two inside its page. Each 
 Persistent data is kept by the separate `../website-community-service` Sites project, not in the Git repository or browser storage. `community-config.js` holds the production service address and a separate loopback preview address. The service must allow anonymous visitors for the public GitHub Pages site to use it; it exposes aggregate counts and add-heart actions, not database management access.
 
 The common footer lives in `moments/index.html`. Run the album generator after editing it or the community scripts to update every page. Local HTTP previews use the local database on port 5173; file previews display dashes and disable hearts rather than inventing online statistics.
+
+## Sorting note
+
+`notes/sorting/index.html` contains eight algorithm explanations, complexity and stability notes, four language examples per algorithm, and dependency-free demos. Each demo starts with the same 15 random values and accepts 1–20 comma-separated numbers, magnitude below 1,000,000, with at most three decimal places. Only one lazy step generator runs at once. Animations pause off screen, when the tab is hidden or when the page is left; sorting never calls a server.
+
+Edit descriptions in `scripts/build_sorting_note.py` and the original examples in `scripts/sorting-examples.json`, then run `python3 scripts/build_sorting_note.py`. This regenerates the HTML, classic examples script and asset versions. Shared asset changes should be followed by this generator as well as the album generator.
+
+Run `node scripts/check_sorting.cjs` for parser and animation-engine checks. Run `python3 scripts/check_sorting_examples.py --java-home /path/to/jdk` to compile and execute all 32 examples using clang, clang++ and a JDK. Compilers and generated binaries are check tools only and do not enter the website.
+
+The article heart uses the existing community API and database tables with the separate key `note-eight-sorts-2026-11-04`. Its metadata is registered in the service's `app/admin/notes.json`. Publish the service allowlist before the frontend when publication is explicitly requested; local edits do not authorize commits, pushes or deployment.
