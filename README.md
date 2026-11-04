@@ -55,3 +55,13 @@ Album images use small previews during browsing and load the larger web-sized fi
 Current photo sizes are capped at 2160px on the long edge for full-frame WebP files and 1080px for previews; directory covers are 864×648px. Use original source photographs when preparing future additions. The album's photo order, crop choices and desktop pairings are curated independently of these file sizes.
 
 The generated album pages and Moments directory include content versions for their styles, scripts and photographs. Re-run `python3 scripts/build_albums.py` after changing those assets so browsers load the updated files. Photo pages use a slightly lighter glass header to keep navigation readable over dark photographs.
+
+## Visitors and album hearts
+
+The footer shows all-time visitors, visitors in the current UK calendar month, and page views. Browser IDs are anonymous; revisiting pages adds views without adding another visitor. The month switches automatically on the 1st in `Europe/London`. Counts begin when the integration goes live; earlier website traffic is not reconstructed. Clearing browser storage or using another device can create another visitor.
+
+Every album has a glass heart button on its cover and two inside its page. Each click can add a heart. The buttons use the same album key and shared online count. Network retries reuse event IDs, so one queued click is not counted twice. Future generated albums work automatically.
+
+Persistent data is kept by the separate `../website-community-service` Sites project, not in the Git repository or browser storage. `community-config.js` holds the production service address and a separate loopback preview address. The service must allow anonymous visitors for the public GitHub Pages site to use it; it exposes aggregate counts and add-heart actions, not database management access.
+
+The common footer lives in `moments/index.html`. Run the album generator after editing it or the community scripts to update every page. Local HTTP previews use the local database on port 5173; file previews display dashes and disable hearts rather than inventing online statistics.

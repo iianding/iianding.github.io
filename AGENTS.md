@@ -22,3 +22,11 @@
 - Preserve full photograph compositions in the full-frame viewer. Directory covers and desktop pairings may crop for balance; mobile photo stacks should show natural proportions.
 - Re-run the album generator after changing shared styles or scripts as well as album metadata: generated asset URLs include content versions to avoid stale browser caches. Retain the `photo-journal` body class on the Moments directory and album pages so navigation remains readable above photographs.
 - Keep the existing clear rounded glass material, pointer reflections, accessible navigation and reduced-motion behavior when adding albums.
+
+# Visitors and hearts
+
+- Shared visitor totals and repeatable album hearts are stored by the separate `../website-community-service` project, hosted through Sites with D1. `community-config.js` contains only its public URL; never put API keys or credentials in browser code.
+- Keep one anonymous browser ID across pages. Page views count page loads, while visitors are deduplicated. Monthly visitors use the server's `Europe/London` calendar month; all-time visitors and hearts must never reset with the month.
+- Every click may add another heart. Use idempotent event IDs so request retries cannot duplicate a click. Keep the cover and both album-page buttons in sync, and keep buttons outside the album-opening link.
+- The footer in `moments/index.html` is the shared source. `scripts/build_albums.py` rebases it onto every page and refreshes the shared asset versions. Generated albums inherit their heart controls automatically, including future albums.
+- Localhost uses the local database service on port 5173. Do not send local QA visits or likes to production. File browsing keeps the static site usable and displays no invented counts. Draft templates must not register visits.

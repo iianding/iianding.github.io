@@ -17,6 +17,8 @@
 .album-photo::before { z-index: 3; }
 .album-photo[data-glass-active] > .glass-glint { opacity: .28; }
 .album-signoff { margin: 36px 0 0; color: var(--muted); font-size: 12px; text-align: center; }
+.album-appreciation { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px 22px; margin-top: 18px; }
+.album-appreciation p { margin: 0; color: var(--muted); font-size: 12px; }
 .album-return { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); }
 .album-return .text-link { font-size: 13px; }
 

@@ -58,6 +58,15 @@ def display_date(album):
     return f"{value.day} {value.strftime('%B')} {value.year}"
 
 
+def heart_button(album, cover=False):
+    title = escape(album["title"], quote=True)
+    label = "" if cover else '<span class="heart-label">Send a heart</span>'
+    return f'''<button class="album-like glass-surface{' album-like-cover' if cover else ''}" type="button" data-album-like="{identifier(album)}" data-album-title="{title}" aria-label="Give a heart to {title}">
+                <svg class="heart-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+                {label}<span data-like-count>—</span>
+              </button>'''
+
+
 def photo_markup(photo, album, page, first=False):
     folder = asset_folder(album)
     full = versioned_asset(folder / photo["file"], page)
@@ -105,6 +114,8 @@ def render_page(album, albums, index, header, footer):
   <link rel="stylesheet" href="{versioned_asset(ROOT / 'moments/album.css', page)}">
   <script src="{versioned_asset(ROOT / 'glass-effects.js', page)}" defer></script>
   <script src="{versioned_asset(ROOT / 'moments/album.js', page)}" defer></script>
+  <script src="{versioned_asset(ROOT / 'community-config.js', page)}" defer></script>
+  <script src="{versioned_asset(ROOT / 'community.js', page)}" defer></script>
 </head>
 <body class="photo-journal">
   <a class="skip" href="#main">Skip to content</a>
@@ -117,7 +128,7 @@ def render_page(album, albums, index, header, footer):
           <p class="moment-location">{escape(album['location'])}</p>
           <h1 id="page-title">{title}</h1>
           <p class="lead">{escape(album['description'])}</p>
-          <div class="moment-detail-meta"><span class="moment-kind glass-surface">Photo journal</span><time datetime="{album['date']}">{display_date(album)}</time><span>{count} photographs</span></div>
+          <div class="moment-detail-meta"><span class="moment-kind glass-surface">Photo journal</span><time datetime="{album['date']}">{display_date(album)}</time><span>{count} photographs</span>{heart_button(album)}</div>
         </div>
         <div class="album-opening">
 {photos[0]}
@@ -132,6 +143,7 @@ def render_page(album, albums, index, header, footer):
           </div>
         </section>
         <p class="album-signoff">{escape(album['signoff'])}</p>
+        <div class="album-appreciation"><p>The camera accepts compliments.</p>{heart_button(album)}</div>
       </article>
 {pagination(albums, index, page)}
       <nav class="album-return" aria-label="Album navigation">
@@ -167,7 +179,8 @@ def collection_card(album, index):
     count = len(album["photos"])
     loading = 'fetchpriority="high"' if index == 0 else 'loading="lazy"'
     return f'''          <li data-date="{album['date']}">
-            <a id="{anchor}" class="moment-entry moment-entry-link glass-surface" href="{relative(album_path(album), COLLECTION)}" aria-labelledby="{anchor}-title">
+            <article id="{anchor}" class="moment-entry moment-entry-link glass-surface" aria-labelledby="{anchor}-title">
+              <a class="moment-open-link" href="{relative(album_path(album), COLLECTION)}" aria-labelledby="{anchor}-title"></a>
               <div class="moment-copy">
                 <p class="moment-location">{escape(album['location'])}</p>
                 <h2 id="{anchor}-title">{escape(album['title'])}</h2>
@@ -177,10 +190,11 @@ def collection_card(album, index):
                   <span class="moment-format">Open album <span aria-hidden="true">&nearr;</span></span>
                 </div>
               </div>
-              <figure class="moment-photo glass-surface">
+              <div class="moment-visual"><figure class="moment-photo glass-surface">
                 <img src="{versioned_asset(asset_folder(album) / 'previews/cover.webp', COLLECTION)}" width="{album.get('cover_width', 960)}" height="{album.get('cover_height', 720)}" alt="{escape(album['cover_alt'], quote=True)}" {loading} decoding="async">
               </figure>
-            </a>
+              {heart_button(album, cover=True)}</div>
+            </article>
           </li>'''
 
 
@@ -216,6 +230,19 @@ def main():
         page = album_path(album)
         page.parent.mkdir(parents=True, exist_ok=True)
         page.write_text(render_page(album, albums, index, header, footer))
+    shared = [ROOT / 'style.css', ROOT / 'glass-effects.js', ROOT / 'community-config.js', ROOT / 'community.js']
+    for page in ROOT.rglob('*.html'):
+        if '.git' in page.parts:
+            continue
+        content = page.read_text()
+        content = re.sub(r'    <footer>.*?</footer>', lambda _: rebase(footer, COLLECTION, page), content, count=1, flags=re.S)
+        for asset in shared:
+            attribute = 'href' if asset.suffix == '.css' else 'src'
+            pattern = rf'{attribute}="[^\"]*(?<![\w-]){re.escape(asset.name)}(?:\?[^\"]*)?"'
+            content, found = re.subn(pattern, lambda _: f'{attribute}="{versioned_asset(asset, page)}"', content, count=1)
+            if not found and asset.name.startswith('community'):
+                content = content.replace('</head>', f'  <script src="{versioned_asset(asset, page)}" defer></script>\n</head>')
+        page.write_text(content)
     print(f"Rendered {len(albums)} albums and a newest-first Moments directory.")
 
 

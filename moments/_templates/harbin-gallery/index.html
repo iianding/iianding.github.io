@@ -6,8 +6,10 @@
   <meta name="description" content="Small things, big detour. Harbin · China — photo journal by Ian Ding.">
   <meta name="theme-color" content="#ffffff">
   <title>Small things, big detour. — Moments — Ian Ding</title>
-  <link rel="stylesheet" href="../../../style.css">
-  <script src="../../../glass-effects.js" defer></script>
+  <link rel="stylesheet" href="../../../style.css?v=f3dee44360d8">
+  <script src="../../../glass-effects.js?v=7fb723ad3620" defer></script>
+  <script src="../../../community-config.js?v=df36de500a9f" defer></script>
+  <script src="../../../community.js?v=f9883a5c915c" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -56,17 +58,28 @@
 
     </main>
     <footer>
-      <span>&copy; Ian Ding</span>
-      <div class="creeper-status" lang="en">
-        <img class="creeper-icon" src="../../../image/creeper.svg" alt="" width="24" height="24">
-        <div class="creeper-details">
-          <div class="creeper-meter">
-            <span class="creeper-percent" aria-hidden="true">0%</span>
-            <div class="creeper-track" role="progressbar" aria-label="World destruction progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-              <span class="creeper-fill"></span>
+      <div class="visitor-card glass-surface" aria-label="Website visitors">
+        <p class="visitor-kicker">Excellent. More people avoiding their to-do lists.</p>
+        <dl class="visitor-counts">
+          <div><dt>Visitors</dt><dd data-visitor-count="total">—</dd></div>
+          <div><dt title="Unique browsers this calendar month; resets on the 1st, UK time.">This month</dt><dd data-visitor-count="monthly">—</dd></div>
+          <div><dt>Page views</dt><dd data-visitor-count="views">—</dd></div>
+        </dl>
+        <p class="visually-hidden" data-community-status role="status"></p>
+      </div>
+      <div class="footer-base">
+        <span>&copy; Ian Ding</span>
+        <div class="creeper-status" lang="en">
+          <img class="creeper-icon" src="../../../image/creeper.svg" alt="" width="24" height="24">
+          <div class="creeper-details">
+            <div class="creeper-meter">
+              <span class="creeper-percent" aria-hidden="true">0%</span>
+              <div class="creeper-track" role="progressbar" aria-label="World destruction progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <span class="creeper-fill"></span>
+              </div>
             </div>
+            <span class="creeper-caption">Blowing up the world (0%)</span>
           </div>
-          <span class="creeper-caption">Blowing up the world (0%)</span>
         </div>
       </div>
     </footer>
