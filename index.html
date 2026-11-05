@@ -6,7 +6,7 @@
   <meta name="description" content="Ian Ding: C and C++ on Linux, computer science, and a growing curiosity about how computers work.">
   <meta name="theme-color" content="#ffffff">
   <title>Ian Ding — Oh no, you found me!</title>
-  <link rel="stylesheet" href="./style.css?v=8893c5fb3d13">
+  <link rel="stylesheet" href="./style.css?v=c59446b4a03c">
   <script src="./glass-effects.js?v=7fb723ad3620" defer></script>
   <script src="./community-config.js?v=df36de500a9f" defer></script>
   <script src="./community.js?v=f9883a5c915c" defer></script>
@@ -76,40 +76,31 @@
       <section class="profile-section" aria-labelledby="experience-title">
         <h2 id="experience-title" class="section-label"><span class="section-number">02 /</span> Working chapters</h2>
         <div class="profile-body">
-          <h3>C++ Development Engineer</h3>
-          <p class="profile-meta">2021 &ndash; 2025 &middot; A certain software company &middot; China &middot; C/C++ on Linux</p>
-          <p>Nearly four years across four Linux-based C/C++ software projects: reading existing code, adding features, working through rewrites with colleagues, and keeping things running beyond my own machine. The deployment environment had a vote, too.</p>
-          <ul class="experience-list">
-            <li>Developed and extended C/C++ modules on Linux for data processing, routing, scheduling and interface integration.</li>
-            <li>Handled deployment, testing and maintenance in real Linux environments, including dependencies, build configuration and operational shell scripts.</li>
-            <li>Used GDB, perf and Wireshark to investigate runtime issues, processing overhead and messages that looked almost right. Almost is quite a long way from right in a binary protocol.</li>
-            <li>Worked with developers and test engineers on integration and fixes, and helped new colleagues navigate the code through diagrams and explanations.</li>
-          </ul>
-        </div>
-      </section>
-      <section class="profile-section" aria-labelledby="builds-title">
-        <h2 id="builds-title" class="section-label"><span class="section-number">03 /</span> A few things I've worked on</h2>
-        <div class="profile-body">
-          <article class="project-summary">
-            <p class="profile-kicker teal">AT WORK &middot; LINUX &middot; DATA PROCESSING</p>
+          <article>
+            <h3>C++ Development Engineer</h3>
+            <p class="profile-meta">2021 &ndash; 2025 &middot; A certain software company &middot; China &middot; C/C++ on Linux</p>
+            <p>Over nearly four years, I worked on four C/C++ projects on Linux, building and extending modules for data processing, routing, scheduling and system integration. I also tested, deployed and maintained the software, including its build settings, dependencies and operational shell scripts.</p>
+            <p>I worked with developers and test engineers to trace runtime issues with GDB, perf and Wireshark, and helped new colleagues find their way around the code with diagrams and walkthroughs.</p>
+          </article>
+          <article id="builds-title" class="project-summary">
+            <p class="profile-kicker teal">DATA DISTRIBUTION</p>
             <h3>Getting data to the right place</h3>
-            <p>In one Linux-based C/C++ data-distribution system, I worked on message validation and assembly, routing, configuration and timed tasks. During a major rewrite with a colleague, I took responsibility for the core processing program.</p>
-            <p>The less visible part: deploying and testing it on Linux, examining function costs with perf, adjusting processing logic and CPU affinity, and using jemalloc for memory allocation. Asking a program to be faster is easy; finding out where the time goes takes a little more detective <span class="mc-aside">work. <img class="mc-icon" src="./image/mc-spyglass.svg" width="24" height="24" alt="" aria-hidden="true" title="Looking for the bottleneck"></span></p>
+            <p>I took on a Linux data router&rsquo;s core rewrite, from validation to scheduling, then got the bytes moving with perf, CPU affinity and <span class="mc-aside">jemalloc. <img class="mc-icon" src="./image/mc-spyglass.svg" width="24" height="24" alt="" aria-hidden="true" title="Looking for the bottleneck"></span></p>
           </article>
           <article class="project-summary">
-            <p class="profile-kicker rose">AT WORK &middot; LINUX &middot; INTEGRATION</p>
+            <p class="profile-kicker rose">SYSTEMS INTEGRATION</p>
             <h3>Making different systems agree</h3>
-            <p>Across other Linux-based C/C++ data-processing tools, I extended modules, adapted interfaces and data formats, and supported testing and deployment. Integration often meant checking captured traffic byte by byte, tracking down endianness and format mismatches, and coordinating fixes with other developers. Two programs can disagree over surprisingly small things.</p>
+            <p>I integrated Linux C/C++ tools, adapted interfaces and formats, and refereed the occasional argument about byte order.</p>
           </article>
           <article class="project-summary">
-            <p class="profile-kicker blue">EARLIER &middot; LINUX &middot; TRAINING PROJECTS</p>
+            <p class="profile-kicker blue">EARLIER TRAINING PROJECTS</p>
             <h3>Learning by wiring things together</h3>
-            <p>Earlier C/C++ training on Linux included contributions to a file-transfer service and a text-search tool: file operations, resumable transfers, a word-suggestion dictionary, and thread-pool and Reactor frameworks based on established designs. A practical introduction to sockets, concurrency and all the ways pieces can fail to fit.</p>
+            <p>I helped build resumable file transfer and text search with word suggestions, thread pools and Reactor patterns (the sockets kept things lively).</p>
           </article>
         </div>
       </section>
       <section class="profile-section" aria-labelledby="toolbox-title">
-        <h2 id="toolbox-title" class="section-label"><span class="section-number">04 /</span> My usual toolbox</h2>
+        <h2 id="toolbox-title" class="section-label"><span class="section-number">03 /</span> My usual toolbox</h2>
         <div class="profile-body">
           <p>A few tools I've used while developing, debugging and deploying on Linux. No proficiency bars: a debugger has never asked me how much C or C++ I <span class="mc-aside">know. <img class="mc-icon" src="./image/mc-experience-orb.svg" width="24" height="24" alt="" aria-hidden="true" title="Experience earned the hard way"></span></p>
           <dl class="toolbox glass-surface">
@@ -133,7 +124,7 @@
         </div>
       </section>
       <section class="profile-section" aria-labelledby="learning-title">
-        <h2 id="learning-title" class="section-label"><span class="section-number">05 /</span> Back in learning mode</h2>
+        <h2 id="learning-title" class="section-label"><span class="section-number">04 /</span> Back in learning mode</h2>
         <div class="profile-body">
           <article class="learning-entry">
             <h3>MSc Computer Science <span class="small">&middot; In progress</span></h3>
@@ -145,6 +136,23 @@
             <p class="profile-meta">Heilongjiang University &middot; China</p>
             <p>My undergraduate work included modelling acoustic behaviour in periodic materials with COMSOL, varying parameters and comparing simulation results. Before debugging software, there were simulations to make sense of.</p>
           </article>
+        </div>
+      </section>
+      <section id="research" class="profile-section" aria-labelledby="research-title">
+        <h2 id="research-title" class="section-label"><span class="section-number">05 /</span> Academia, still in beta.</h2>
+        <div class="profile-body">
+          <div class="research-entry">
+            <h3>Articles</h3>
+            <p>No articles yet. The blank page is still winning.</p>
+          </div>
+          <div class="research-entry">
+            <h3>Conferences</h3>
+            <p>No talks yet. My imaginary slides are ready.</p>
+          </div>
+          <div class="research-entry">
+            <h3>Research outputs</h3>
+            <p>Nothing to report yet. The progress bar looks very confident.</p>
+          </div>
         </div>
       </section>
       <section id="explore" class="explore" aria-labelledby="explore-title">
