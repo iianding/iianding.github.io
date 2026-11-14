@@ -10,6 +10,8 @@
   const uuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
   const draft = location.pathname.includes('/_templates/');
   const counts = new Map();
+  const feedbacks = new Map();
+  const feedbackTimers = new Map();
   const queues = new Map();
   const running = new Set();
   const timers = new Map();
@@ -17,7 +19,8 @@
   let visitorId;
   let month;
   let refreshing = false;
-  let retryTimer = 0;
+  let visitPending = true;
+  let lastRefresh = -Infinity;
   const uuid = () => {
     if (typeof crypto.randomUUID === 'function') return crypto.randomUUID();
     const bytes = crypto.getRandomValues(new Uint8Array(16));
@@ -30,7 +33,17 @@
   const fullNumber = new Intl.NumberFormat('en-GB');
   const shortNumber = new Intl.NumberFormat('en-GB', { notation: 'compact', maximumFractionDigits: 1 });
   const format = value => value < 10000 ? fullNumber.format(value) : shortNumber.format(value);
-  const status = text => document.querySelectorAll('[data-community-status]').forEach(node => { node.textContent = text; });
+  const status = text => document.querySelectorAll('[data-community-status]').forEach(node => {
+    if (node.textContent !== text) node.textContent = text;
+  });
+  const heartFeedback = (id, text, temporary = false) => {
+    clearTimeout(feedbackTimers.get(id));
+    feedbackTimers.delete(id);
+    feedbacks.get(id)?.forEach(node => { node.textContent = text; });
+    if (temporary) {
+      feedbackTimers.set(id, setTimeout(() => heartFeedback(id, ''), 2800));
+    }
+  };
   const saveQueue = () => {
     try { sessionStorage.setItem(queueKey, JSON.stringify(Object.fromEntries(queues))); } catch { /* Hearts still work without storage. */ }
   };
@@ -92,28 +105,34 @@
         counts.set(albumId, Math.max(counts.get(albumId) || 0, result.count));
         buttons.filter(button => button.dataset.albumLike === albumId).forEach(button => button.classList.add('has-hearts'));
         render(albumId);
-        status(`${fullNumber.format(result.count)} ${result.count === 1 ? 'heart' : 'hearts'}. Much appreciated.`);
       }
+      heartFeedback(albumId, 'Saved', true);
     } catch {
-      buttons.filter(button => button.dataset.albumLike === albumId).forEach(button => { button.title = 'That heart is waiting for a connection. Tap to try again.'; });
-      status('A heart is waiting for a connection. It will retry when you return.');
+      heartFeedback(albumId, navigator.onLine ? 'Heart waiting to be sent.' : 'Waiting for connection…');
     } finally {
       running.delete(albumId);
       buttons.filter(button => button.dataset.albumLike === albumId).forEach(button => button.setAttribute('aria-busy', 'false'));
     }
   };
-  const refresh = async (register = false) => {
+  const refresh = async () => {
     if (refreshing) return;
     refreshing = true;
+    lastRefresh = performance.now();
+    const eventId = visitEventId;
     try {
-      register = register && !draft;
-      let data = await request(register ? '/visits' : '/stats', register ? { visitorId, eventId: visitEventId } : undefined);
-      if (!draft && !register && data.visitors?.month !== month) data = await request('/visits', { visitorId, eventId: visitEventId });
+      const register = visitPending && !draft;
+      let data = await request(register ? '/visits' : '/stats', register ? { visitorId, eventId } : undefined);
+      if (!draft && !register && data.visitors?.month !== month) {
+        data = await request('/visits', { visitorId, eventId });
+      }
       applySnapshot(data);
+      if (eventId === visitEventId) visitPending = false;
     } catch {
-      status('The counters are taking a short breather. Please try again shortly.');
-      if (register && !retryTimer) retryTimer = setTimeout(() => { retryTimer = 0; refresh(true); }, 30000);
-    } finally { refreshing = false; }
+      status('Visitor totals are temporarily unavailable.');
+    } finally {
+      refreshing = false;
+      if (eventId !== visitEventId) refresh();
+    }
   };
   if (!apiBase || !['http:', 'https:'].includes(location.protocol)) {
     buttons.forEach(button => { button.disabled = true; button.title = 'Hearts and visitor totals are available on the live site.'; });
@@ -135,23 +154,43 @@
     });
   } catch { /* A missing or blocked session store is harmless. */ }
   buttons.forEach(button => {
+    const id = button.dataset.albumLike;
+    const feedback = document.createElement('span');
+    feedback.className = 'heart-feedback';
+    if (button.classList.contains('album-like-cover')) feedback.classList.add('heart-feedback-cover');
+    feedback.setAttribute('role', feedbacks.has(id) ? 'presentation' : 'status');
+    button.after(feedback);
+    if (!feedbacks.has(id)) feedbacks.set(id, []);
+    feedbacks.get(id).push(feedback);
     button.addEventListener('click', () => {
-      const id = button.dataset.albumLike;
       const pending = queues.get(id) || [];
-      if (pending.length >= 200) { status('A few hearts are still on their way. Give them a moment.'); return; }
+      if (pending.length >= 200) {
+        heartFeedback(id, 'Hearts waiting to be sent.');
+        flush(id);
+        return;
+      }
       pending.push(uuid()); queues.set(id, pending); saveQueue();
       button.classList.remove('heart-pop'); void button.offsetWidth; button.classList.add('heart-pop');
       render(id);
+      heartFeedback(id, navigator.onLine ? 'Sending…' : 'Waiting for connection…');
       if (!timers.has(id)) timers.set(id, setTimeout(() => { timers.delete(id); flush(id); }, 70));
     });
     button.addEventListener('animationend', () => button.classList.remove('heart-pop'));
   });
   queues.forEach((_, id) => flush(id));
-  refresh(true);
-  setInterval(() => { if (!document.hidden) refresh(); }, 60000);
-  window.addEventListener('online', () => { refresh(true); queues.forEach((_, id) => flush(id)); });
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) { refresh(); queues.forEach((_, id) => flush(id)); } });
-  window.addEventListener('pageshow', event => { if (event.persisted) { visitEventId = uuid(); refresh(true); } });
+  refresh();
+  window.addEventListener('online', () => { refresh(); queues.forEach((_, id) => flush(id)); });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) return;
+    if (visitPending || performance.now() - lastRefresh > 60000) refresh();
+    queues.forEach((_, id) => flush(id));
+  });
+  window.addEventListener('pageshow', event => {
+    if (!event.persisted) return;
+    visitEventId = uuid();
+    visitPending = true;
+    refresh();
+  });
   window.addEventListener('pagehide', () => {
     saveQueue();
     queues.forEach((events, albumId) => { if (events.length) request('/likes', { albumId, eventIds: events.slice(0, 20) }, true).catch(() => {}); });

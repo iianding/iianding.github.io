@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://iianding.github.io/sitemap.xml

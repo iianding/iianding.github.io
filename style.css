@@ -390,7 +390,6 @@ header nav a[aria-current="location"] {
 .profile-body p:last-child { margin-bottom: 0; }
 .profile-body .profile-meta { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
 .learning-entry + .learning-entry { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line-soft); }
-.research-entry + .research-entry { margin-top: 24px; }
 .project-summary { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line-soft); }
 .profile-body .project-summary h3 { font-size: 20px; margin-bottom: 5px; }
 .profile-body .project-summary p { font-size: 14px; line-height: 1.6; }
@@ -440,6 +439,20 @@ header nav a[aria-current="location"] {
 .album-like:disabled { opacity: .6; cursor: default; }
 .album-like .heart-icon { flex-shrink: 0; }
 .album-like.has-hearts .heart-icon { fill: currentColor; }
+.heart-feedback { color: var(--purple-strong); font-size: 12px; line-height: 1.5; }
+.heart-feedback:empty { position: absolute; }
+.heart-feedback-cover:not(:empty) {
+  position: absolute;
+  z-index: 4;
+  right: 16px;
+  bottom: 66px;
+  max-width: calc(100% - 32px);
+  padding: 5px 10px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 12px #23153220;
+  pointer-events: none;
+}
 .moment-visual .album-like-cover { position: absolute; z-index: 4; right: 16px; bottom: 16px; min-width: 72px; background: linear-gradient(145deg, rgba(255, 255, 255, .87), rgba(249, 247, 253, .75)); }
 .album-like-cover > .glass-glint { opacity: 0; }
 .album-like-cover[data-glass-active] > .glass-glint { opacity: .4; }
@@ -599,4 +612,70 @@ footer { display: flex; flex-direction: column; align-items: stretch; gap: 20px;
 @media (prefers-reduced-motion: reduce) {
   .album-like { transition: none; }
   .heart-pop .heart-icon { animation: none; }
+}
+
+/* Featured links and course reading use the same compact glass cards. */
+.featured { margin: 0 0 44px; }
+.featured h2, .related-notes h2 { margin-bottom: 16px; }
+.featured-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.featured-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+  padding: 18px;
+  border-radius: 24px;
+}
+.featured-visual {
+  flex: 0 0 clamp(84px, 12vw, 136px);
+  width: clamp(84px, 12vw, 136px);
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  object-fit: cover;
+}
+.featured-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  padding: 13px 11px;
+  background: linear-gradient(145deg, #f7f2fc, #ece2fa);
+}
+.featured-bars i {
+  flex: 1;
+  height: var(--bar);
+  border-radius: 4px 4px 2px 2px;
+  background: linear-gradient(180deg, #a37ad5, #c5afe4);
+}
+.featured-copy { min-width: 0; }
+.featured-copy h3 { font-size: clamp(17px, 2vw, 21px); margin: 4px 0 6px; line-height: 1.25; }
+.featured-copy p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+.featured-copy .featured-kind { color: var(--purple); font-size: 11px; }
+.featured-action { display: inline-block; margin-top: 8px; color: var(--purple); font-size: 12px; }
+.related-notes { max-width: 760px; margin-top: 36px; }
+.related-notes .featured-card { padding: 20px 24px; }
+.phd-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 220px);
+  align-items: center;
+  gap: 24px 36px;
+  margin: 0 0 32px;
+  padding: 28px 30px;
+  border-radius: 24px;
+}
+.phd-contact h2 { font-size: clamp(22px, 3vw, 28px); }
+.phd-contact p { max-width: 620px; margin: 9px 0 0; color: var(--muted); font-size: 14px; }
+.phd-details { display: grid; gap: 12px; margin: 0; }
+.phd-details dt { font-size: 13px; font-weight: 600; }
+.phd-details dd { margin: 0; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .featured { margin-bottom: 32px; }
+  .featured-grid, .phd-contact { grid-template-columns: 1fr; }
+  .featured-grid { gap: 12px; }
+}
+@media (max-width: 420px) {
+  .featured-card { padding: 14px; gap: 12px; }
+  .featured-visual { flex-basis: 76px; width: 76px; border-radius: 11px; }
+  .featured-bars { gap: 3px; padding: 10px 8px; }
+  .phd-contact { padding: 22px; }
 }

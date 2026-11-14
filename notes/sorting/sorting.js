@@ -15,16 +15,21 @@
       this.editor = lab.querySelector('[data-editor]'); this.error = lab.querySelector('[data-error]');
       this.startButton = lab.querySelector('[data-action="start"]'); this.startLabel = lab.querySelector('[data-start-label]');
       this.startIcon = lab.querySelector('[data-start-icon]'); this.customButton = lab.querySelector('[data-action="custom"]');
+      this.stepButton = lab.querySelector('[data-action="step"]');
       this.state = lab.querySelector('[data-state]'); this.message = lab.querySelector('[data-message]');
       this.announcement = lab.querySelector('[data-announcement]'); this.pace = lab.querySelector('[data-speed]');
       this.running = false; this.timer = 0; this.iterator = null; this.completed = false;
       lab.querySelectorAll('button[disabled]').forEach(button => { button.disabled = false; });
       this.setNumbers(initial, 'Fifteen numbers. Not yet a queue.');
       this.startButton.addEventListener('click', () => this.running ? this.pause('Paused. The numbers are not going anywhere.') : this.start());
+      this.stepButton.addEventListener('click', () => this.step());
       this.customButton.addEventListener('click', () => this.openEditor());
       lab.querySelector('[data-action="shuffle"]').addEventListener('click', () => this.setNumbers(engine.randomValues(), 'A fresh list. Same small sorting problem.'));
       lab.querySelector('[data-action="reset"]').addEventListener('click', () => this.setNumbers(this.original, 'Back to the starting order. No hard feelings.'));
-      lab.querySelector('[data-action="cancel"]').addEventListener('click', () => this.closeEditor());
+      lab.querySelector('[data-action="cancel"]').addEventListener('click', () => {
+        this.closeEditor();
+        this.customButton.focus();
+      });
       this.editor.addEventListener('submit', event => { event.preventDefault(); this.applyInput(); });
       this.input.addEventListener('input', () => {
         if (this.input.getAttribute('aria-invalid') === 'true') {
@@ -44,13 +49,14 @@
     announce(text) { this.announcement.textContent = text; }
     closeEditor() {
       this.editor.hidden = true; this.customButton.setAttribute('aria-expanded', 'false');
-      this.startButton.disabled = false; this.clearError();
+      this.startButton.disabled = false; this.stepButton.disabled = false; this.clearError();
     }
     openEditor() {
       if (!this.editor.hidden) { this.closeEditor(); return; }
       if (this.running) this.pause('Paused while you edit the guest list.');
       this.input.value = this.original.join(', '); this.clearError();
-      this.editor.hidden = false; this.customButton.setAttribute('aria-expanded', 'true'); this.startButton.disabled = true;
+      this.editor.hidden = false; this.customButton.setAttribute('aria-expanded', 'true');
+      this.startButton.disabled = true; this.stepButton.disabled = true;
       this.input.focus();
     }
     applyInput() {
@@ -110,14 +116,26 @@
       this.message.textContent = frame.message;
       this.chart.setAttribute('aria-label', `${frame.kind === 'done' ? 'Sorted' : 'Current'} order: ${frame.values.join(', ')}`);
     }
-    start() {
+    prepareStep() {
       if (active && active !== this) active.pause('Another demo has the floor. This one will wait.');
       if (this.completed) this.setNumbers(this.original, 'One more look at the same list.');
       this.closeEditor();
       if (!this.iterator) this.iterator = engine.createStepper(this.name, this.original);
+    }
+    start() {
+      this.prepareStep();
       active = this; this.running = true; this.lab.dataset.running = 'true';
       this.startLabel.textContent = 'Pause'; this.startIcon.textContent = 'Ⅱ'; this.state.textContent = 'Sorting';
       this.announce('Sorting started. Pause whenever you like.'); this.tick();
+    }
+    step() {
+      if (this.running) this.pause('Paused for a single step.');
+      this.prepareStep();
+      const frame = this.advance();
+      if (!frame || frame.kind === 'done') return;
+      this.startLabel.textContent = 'Resume';
+      this.state.textContent = 'Paused';
+      this.announce(frame.message);
     }
     pause(message) {
       clearTimeout(this.timer); this.timer = 0; this.running = false;
@@ -125,22 +143,26 @@
       this.lab.dataset.running = 'false'; this.startLabel.textContent = this.iterator && !this.completed ? 'Resume' : 'Start';
       this.startIcon.textContent = '▷'; this.state.textContent = 'Paused'; this.message.textContent = message; this.announce(message);
     }
-    tick() {
-      if (!this.running) return;
+    advance() {
       try {
         const next = this.iterator.next();
-        if (next.done) return;
+        if (next.done) throw new Error('Missing final frame');
         this.steps++; this.render(next.value);
         if (next.value.kind === 'done') {
           this.running = false; this.completed = true; this.timer = 0;
           if (active === this) active = null;
           this.lab.dataset.running = 'false'; this.startLabel.textContent = 'Replay'; this.startIcon.textContent = '↻'; this.state.textContent = 'Sorted';
-          this.announce('Sorted. The list is now in ascending order.'); return;
+          this.announce('Sorted. The list is now in ascending order.');
         }
-        this.timer = setTimeout(() => this.tick(), this.delay());
+        return next.value;
       } catch {
         this.pause('This demo needs a reset. Please try again.'); this.iterator = null;
       }
+    }
+    tick() {
+      if (!this.running) return;
+      this.advance();
+      if (this.running) this.timer = setTimeout(() => this.tick(), this.delay());
     }
   }
 
@@ -157,10 +179,37 @@
   window.addEventListener('pagehide', () => { if (active) active.pause('Paused.'); });
 
   const languages = { c: 'C', cpp: 'C++', python: 'Python', java: 'Java' };
+  async function copyText(text) {
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch { /* File browsing and restricted browsers can use the fallback. */ }
+    }
+    const previousFocus = document.activeElement;
+    const field = document.createElement('textarea');
+    field.value = text;
+    field.readOnly = true;
+    field.className = 'visually-hidden';
+    document.body.append(field);
+    field.select();
+    try {
+      return document.execCommand('copy');
+    } catch {
+      return false;
+    } finally {
+      field.remove();
+      previousFocus?.focus({ preventScroll: true });
+    }
+  }
+
   document.querySelectorAll('[data-algorithm]').forEach(section => {
     const name = section.dataset.algorithm;
     const tabs = [...section.querySelectorAll('[data-language]')];
     const panel = section.querySelector('[role="tabpanel"]');
+    const copy = section.querySelector('[data-copy-code]');
+    const feedback = section.querySelector('[data-copy-feedback]');
+    let copyRequest = 0;
     function select(tab, focus = false) {
       const language = tab.dataset.language, example = window.SortExamples?.[name]?.[language];
       if (typeof example !== 'string') return;
@@ -170,8 +219,21 @@
       panel.querySelector('code').replaceChildren(fragment);
       panel.setAttribute('aria-labelledby', tab.id);
       section.querySelector('[data-code-label]').textContent = languages[language];
+      copyRequest++;
+      feedback.textContent = '';
       if (focus) tab.focus();
     }
+    copy.hidden = false;
+    copy.addEventListener('click', async () => {
+      const request = ++copyRequest;
+      const selected = tabs.find(tab => tab.getAttribute('aria-selected') === 'true');
+      const language = selected.dataset.language;
+      const example = window.SortExamples?.[name]?.[language] ??
+        Array.from(panel.querySelectorAll('.code-line'), line => line.textContent).join('\n');
+      const copied = await copyText(example);
+      if (request !== copyRequest) return;
+      feedback.textContent = copied ? languages[language] + ' code copied.' : 'Could not copy. Select and copy the code below.';
+    });
     tabs.forEach(tab => tab.addEventListener('click', () => select(tab)));
     section.querySelector('[role="tablist"]').addEventListener('keydown', event => {
       if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;

@@ -35,7 +35,7 @@ body.photo-viewer-open { overflow: hidden; }
 .viewer-control:hover { background: rgba(255, 255, 255, .18); }
 .viewer-control[data-glass-active] > .glass-glint { opacity: .18; }
 .viewer-control:focus-visible { outline: 2px solid white; outline-offset: 4px; }
-.viewer-stage { display: flex; align-items: center; justify-content: center; position: relative; flex: 1; min-height: 0; overflow: hidden; }
+.viewer-stage { display: flex; align-items: center; justify-content: center; position: relative; flex: 1; min-height: 0; overflow: hidden; touch-action: pan-y pinch-zoom; }
 .viewer-stage img { display: block; width: 96%; height: 96%; object-fit: contain; border-radius: 12px; }
 .viewer-stage [hidden] { display: none; }
 .viewer-status { position: absolute; margin: 0; color: rgba(255, 255, 255, .8); font-size: 14px; text-align: center; }

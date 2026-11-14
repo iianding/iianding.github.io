@@ -8,6 +8,7 @@ import re
 from html import escape
 from pathlib import Path
 from build_albums import ROOT, rebase, versioned_asset
+from site_metadata import update_page_metadata
 
 PAGE = ROOT / 'notes/sorting/index.html'
 SOURCE = ROOT / 'notes/index.html'
@@ -58,6 +59,7 @@ def player(algorithm):
           <div class="lab-readout"><span class="lab-order-label">Current order</span><output class="sort-values" data-values>{', '.join(map(str, SAMPLE))}</output></div>
           <div class="lab-controls">
             <button class="button lab-start" type="button" data-action="start" disabled><span data-start-label>Start</span><span data-start-icon aria-hidden="true">▷</span></button>
+            <button class="button" type="button" data-action="step" disabled><span>Next step</span></button>
             <button class="button" type="button" data-action="custom" aria-expanded="false" aria-controls="{key}-editor" disabled><span>Custom</span></button>
             <button class="button" type="button" data-action="shuffle" disabled><span>Randomise</span></button>
             <button class="button" type="button" data-action="reset" disabled><span>Reset</span></button>
@@ -87,7 +89,11 @@ def section(algorithm, index):
         <p class="implementation-note">{escape(algorithm['note'])}</p>
 {player(algorithm)}
         <details class="sort-code"><summary><span>Code, in your preferred dialect.</span><span class="code-language-badge" data-code-label>C</span></summary>
-          <div class="code-tabs" role="tablist" aria-label="{name} code language">{tabs}</div>
+          <div class="code-toolbar">
+            <div class="code-tabs" role="tablist" aria-label="{name} code language">{tabs}</div>
+            <button class="button code-copy" type="button" data-copy-code hidden><span>Copy code</span></button>
+          </div>
+          <p class="copy-feedback" role="status" data-copy-feedback></p>
           <div id="{key}-code" class="code-panel" role="tabpanel" aria-labelledby="{key}-tab-c" tabindex="0"><pre><code>{code}</code></pre></div>
         </details>
       </section>'''
@@ -123,7 +129,10 @@ def main():
   <div class="wrap">
 {header}
     <main id="main" class="subpage sorting-note">
-      <a class="back-link" href="../index.html">&larr; Back to Notes</a>
+      <nav class="note-back-links" aria-label="Note sections">
+        <a class="back-link" href="../index.html">&larr; Back to Notes</a>
+        <a class="back-link" href="../../now/semester-1/comp526/index.html#related-notes-title">COMP526 · Efficient Algorithms</a>
+      </nav>
       <article aria-labelledby="page-title">
         <div class="page-intro">
           <p class="eyebrow">ALGORITHMS / A SMALL FIELD GUIDE</p>
@@ -133,7 +142,7 @@ def main():
         </div>
         <div class="sort-guide glass-surface" id="algorithms">
           <p class="eyebrow">PICK YOUR DETOUR</p><nav class="sort-contents" aria-label="Sorting algorithms">{contents}</nav>
-          <p>Each demo starts with the same 15 random numbers. Try your own list with <strong>Custom</strong>, then press <strong>Start</strong>. One demo runs at a time; the others are very good at waiting. Your numbers stay in your browser.</p>
+          <p>Each demo starts with the same 15 random numbers. Try your own list with <strong>Custom</strong>, then press <strong>Start</strong> to play or <strong>Next step</strong> to advance once. One demo plays at a time. Your numbers stay in your browser.</p>
           <p class="guide-small"><strong>Reading the numbers:</strong> n is the list length; d is the number of digit passes; b is the bucket count. Stable sorts preserve the original order of equal keys. Extra space excludes the input but includes buffers and call stacks.</p>
           <p class="guide-small">Code examples modify the supplied list of signed 32-bit integers. Demos also accept negative numbers and up to three decimal places. Animations explain steps rather than benchmark speed; radix digit reads are not neighbour comparisons.</p>
           <noscript><p>JavaScript is needed for demos and language switches. The explanations and C examples are still here for a quiet read.</p></noscript>
@@ -148,6 +157,7 @@ def main():
 </body>
 </html>
 ''')
+    update_page_metadata(ROOT, PAGE)
     print('Rendered one sorting note with 8 demos and 32 language examples.')
 
 

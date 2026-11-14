@@ -9,11 +9,17 @@
   const count = viewer.querySelector('.viewer-count');
   const caption = viewer.querySelector('.viewer-caption');
   const status = viewer.querySelector('.viewer-status');
+  const stage = viewer.querySelector('.viewer-stage');
   let current = 0;
   let opener = null;
+  let direction = 1;
+  let preload = null;
+  let swipe = null;
 
-  const showPhoto = (index) => {
-    current = (index + links.length) % links.length;
+  const wrapIndex = index => (index + links.length) % links.length;
+  const showPhoto = (index, nextDirection = 1) => {
+    current = wrapIndex(index);
+    direction = nextDirection;
     const link = links[current];
     const preview = link.querySelector('img');
     image.hidden = true;
@@ -29,9 +35,16 @@
   };
 
   image.addEventListener('load', () => {
+    if (!viewer.open) return;
     image.hidden = false;
     status.hidden = true;
     viewer.removeAttribute('aria-busy');
+    if (links.length < 2 || navigator.connection?.saveData) return;
+    const next = links[wrapIndex(current + direction)].href;
+    if (preload?.src === next) return;
+    preload = new Image();
+    preload.fetchPriority = 'low';
+    preload.src = next;
   });
   image.addEventListener('error', () => {
     status.hidden = false;
@@ -51,19 +64,43 @@
   });
 
   viewer.querySelector('[data-viewer-close]').addEventListener('click', () => viewer.close());
-  viewer.querySelector('[data-viewer-previous]').addEventListener('click', () => showPhoto(current - 1));
-  viewer.querySelector('[data-viewer-next]').addEventListener('click', () => showPhoto(current + 1));
+  const move = offset => showPhoto(current + offset, offset);
+  viewer.querySelector('[data-viewer-previous]').addEventListener('click', () => move(-1));
+  viewer.querySelector('[data-viewer-next]').addEventListener('click', () => move(1));
   viewer.addEventListener('keydown', (event) => {
     if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
     event.preventDefault();
-    showPhoto(current + (event.key === 'ArrowLeft' ? -1 : 1));
+    move(event.key === 'ArrowLeft' ? -1 : 1);
   });
+  stage.addEventListener('pointerdown', event => {
+    if (event.pointerType !== 'touch') return;
+    if (!event.isPrimary) {
+      swipe = null;
+      return;
+    }
+    swipe = { id: event.pointerId, x: event.clientX, y: event.clientY };
+    stage.setPointerCapture(event.pointerId);
+  });
+  stage.addEventListener('pointerup', event => {
+    if (swipe?.id !== event.pointerId) return;
+    const x = event.clientX - swipe.x;
+    const y = event.clientY - swipe.y;
+    swipe = null;
+    if (links.length > 1 && Math.abs(x) >= 48 && Math.abs(x) > Math.abs(y) * 1.5) move(x < 0 ? 1 : -1);
+  });
+  const clearSwipe = event => {
+    if (swipe?.id === event.pointerId) swipe = null;
+  };
+  stage.addEventListener('pointercancel', clearSwipe);
+  stage.addEventListener('lostpointercapture', clearSwipe);
   viewer.addEventListener('click', (event) => {
     if (event.target !== viewer) return;
     const bounds = viewer.getBoundingClientRect();
     if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) viewer.close();
   });
   viewer.addEventListener('close', () => {
+    swipe = null;
+    preload = null;
     document.body.classList.remove('photo-viewer-open');
     opener?.focus({ preventScroll: true });
   });

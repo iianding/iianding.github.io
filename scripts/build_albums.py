@@ -12,10 +12,12 @@ from hashlib import sha256
 from html import escape
 from pathlib import Path
 from urllib.parse import unquote, urlsplit, urlunsplit
+from site_metadata import update_page_metadata, update_sitemap
 
 
 ROOT = Path(__file__).resolve().parents[1]
 COLLECTION = ROOT / "moments/index.html"
+HOME = ROOT / "index.html"
 
 
 def relative(target, page):
@@ -198,6 +200,22 @@ def collection_card(album, index):
           </li>'''
 
 
+def update_featured_album(album):
+    cover = versioned_asset(asset_folder(album) / "previews/cover.webp", HOME)
+    featured = f'''<a class="featured-card card-link glass-surface" data-featured-album href="{relative(album_path(album), HOME)}">
+            <img class="featured-visual" src="{cover}" width="{album.get('cover_width', 960)}" height="{album.get('cover_height', 720)}" alt="" loading="lazy" decoding="async">
+            <div class="featured-copy">
+              <p class="featured-kind">Latest photo journal</p>
+              <h3>{escape(album['title'])}</h3>
+              <p>{escape(album['description'])}</p>
+              <span class="featured-action">Open the album <span aria-hidden="true">&nearr;</span></span>
+            </div>
+          </a>'''
+    page, found = re.subn(r'<a\b[^>]*\bdata-featured-album\b[^>]*>.*?</a>', lambda _: featured, HOME.read_text(), count=1, flags=re.S)
+    assert found == 1
+    HOME.write_text(page)
+
+
 def main():
     albums = json.loads((ROOT / "moments/albums.json").read_text())["albums"]
     albums.sort(key=lambda item: date.fromisoformat(item["date"]), reverse=True)
@@ -210,6 +228,7 @@ def main():
             assert (asset_folder(album) / photo["file"]).is_file()
             assert (asset_folder(album) / "previews" / photo["file"]).is_file()
         assert (asset_folder(album) / "previews/cover.webp").is_file()
+    update_featured_album(albums[0])
     source = COLLECTION.read_text()
     header = re.search(r"    <header>.*?</header>", source, re.S).group()
     footer = re.search(r"    <footer>.*?</footer>", source, re.S).group()
@@ -230,9 +249,24 @@ def main():
         page = album_path(album)
         page.parent.mkdir(parents=True, exist_ok=True)
         page.write_text(render_page(album, albums, index, header, footer))
+    covers = {
+        album_path(album): (
+            (asset_folder(album) / 'previews/cover.webp').relative_to(ROOT).as_posix(),
+            album['cover_alt'],
+        )
+        for album in albums
+    }
+    covers[COLLECTION] = covers[album_path(albums[0])]
+    urls = []
     shared = [ROOT / 'style.css', ROOT / 'glass-effects.js', ROOT / 'community-config.js', ROOT / 'community.js']
     for page in ROOT.rglob('*.html'):
         if '.git' in page.parts:
+            continue
+        if page == ROOT / '404.html':
+            css_url = '/' + versioned_asset(ROOT / 'style.css', page).removeprefix('./')
+            content = re.sub(r'href="/style\.css(?:\?[^"]*)?"', f'href="{css_url}"', page.read_text(), count=1)
+            page.write_text(content)
+            update_page_metadata(ROOT, page)
             continue
         content = page.read_text()
         content = re.sub(r'    <footer>.*?</footer>', lambda _: rebase(footer, COLLECTION, page), content, count=1, flags=re.S)
@@ -243,6 +277,10 @@ def main():
             if not found and asset.name.startswith('community'):
                 content = content.replace('</head>', f'  <script src="{versioned_asset(asset, page)}" defer></script>\n</head>')
         page.write_text(content)
+        url = update_page_metadata(ROOT, page, covers.get(page))
+        if url:
+            urls.append(url)
+    update_sitemap(ROOT, urls)
     print(f"Rendered {len(albums)} albums and a newest-first Moments directory.")
 
 
