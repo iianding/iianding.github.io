@@ -335,7 +335,8 @@
       ],
       "cover_alt": "People and dogs crossing wet sand in low golden sunlight",
       "cover_width": 864,
-      "cover_height": 648
+      "cover_height": 648,
+      "shortcut": "Crosby"
     },
     {
       "city": "liverpool",
@@ -396,7 +397,8 @@
       ],
       "cover_alt": "Visitors in the warm light of Liverpool Cathedral beneath stained-glass windows",
       "cover_width": 864,
-      "cover_height": 648
+      "cover_height": 648,
+      "shortcut": "Cathedral"
     },
     {
       "city": "manchester",
@@ -587,6 +589,2611 @@
           "layout": "portrait"
         }
       ],
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "xian",
+      "location": "Xi’an · China",
+      "date": "2026-05-10",
+      "date_start": "2026-04-23",
+      "title": "Xi’an, on and around the city wall.",
+      "description": "Two spring outings around the wall, where painted roofs and stone gateways interrupt the modern skyline.",
+      "section_title": "More from these walks.",
+      "cover": "DSC02025-20260510",
+      "cover_center": [
+        0.5,
+        0.45
+      ],
+      "photos": [
+        {
+          "file": "DSC02025-20260510.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "A pavilion and red flags above the city wall",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01962-NR-20260423.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Four people sitting along a path in a park",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01966-20260423.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "A person silhouetted in a dark stone passage",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02001-20260510.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Traditional roof at the end of a busy tree-lined avenue",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02003-20260510.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Black-and-white detail of a traditional roof",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02006-20260510.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Painted pavilion at the corner of the wall",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02009-20260510.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Shadows from a rail falling over a road",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02013-20260510.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Modern buildings and mountains beyond a busy avenue",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02019-20260510.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "A person under a street lamp in black and white",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC02022-20260510.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "People gathering beyond a stone railing",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "A pavilion and red flags above the city wall",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "xianyang",
+      "location": "Xianyang · China",
+      "date": "2026-05-01",
+      "title": "Passing through Xianyang.",
+      "description": "A brief stop, long enough for a dragon boat, a sunset and one more look down the railway tracks.",
+      "section_title": "More from the day.",
+      "cover": "DSC01991-20260501",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC01991-20260501.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Railway tracks converging beneath a pink sky",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01968-20260501.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Black-and-white platform with columns and a bench",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC01984-20260501.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Dragon boat crew on the water with the skyline behind them",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01995-20260501.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Orange sky above the silhouettes of apartment blocks",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01998-20260501.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Trains and tracks below a sunset skyline",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "Railway tracks converging beneath a pink sky",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "beijing",
+      "location": "Beijing · China",
+      "date": "2026-03-29",
+      "title": "Back at the Summer Palace.",
+      "description": "The lake kept changing its mind about the light. The cats, meanwhile, had found a perfectly good corner.",
+      "section_title": "More from the day.",
+      "cover": "DSC01909-20260329",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC01909-20260329.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Orange light fading behind hills across the lake",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01881-NR-20260329.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Wooden boat beside rippling green water",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01883.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "An arched bridge across the lake",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01888-20260329.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Painted pavilion on a tall stone wall",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01890-20260329.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "A bright strip of light across dark water",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01892.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Sunlight on the lake below hazy mountains",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01893-20260329.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "A vertical view of the lake under dark clouds",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01900-20260329.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Sunbeams reaching down to the lake",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01907-20260329.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Mountain silhouettes at dusk beyond a boat",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01908-20260329.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Dusk over the lake and a small arched bridge",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC01918-NR-20260329.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Two cats tucked into a dark sheltered corner",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "Orange light fading behind hills across the lake",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "beijing",
+      "location": "Beijing · China",
+      "date": "2026-03-23",
+      "title": "Three frames in the Grand View Garden.",
+      "description": "A quiet corner, blossoms through a window, and a single flower. A short stop was enough.",
+      "section_title": "More from the day.",
+      "cover": "DSC01860-20260323",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC01860-20260323.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Blossoms framed by a dark lattice window",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01852-20260323.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Two people sitting in the shade beside a large rock",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01865-20260323.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "A pale flower isolated against black",
+          "layout": "portrait"
+        }
+      ],
+      "cover_alt": "Blossoms framed by a dark lattice window",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "chengdu",
+      "location": "Chengdu · China",
+      "date": "2026-03-19",
+      "date_start": "2026-03-18",
+      "title": "Two days in Chengdu, mostly looking sideways.",
+      "description": "A small bird, a rushing stream, sharp-edged buildings and a cat that had somewhere else to be.",
+      "section_title": "More from these walks.",
+      "cover": "DSC01798-20260318",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC01798-20260318.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A small orange and blue bird on a reed",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01788-20260318.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Chengdu East railway station at dusk",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01808-20260318.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "A brick building reflected in still water",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01809-20260318_1.webp",
+          "width": 1080,
+          "height": 1920,
+          "alt": "Figure seen through a shaded wooden opening",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01817-20260318.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Leaves above the edge of a tiled roof",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01820-20260318.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Water rushing between green mossy banks",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01835-NR-20260320.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Glass facade framed by stone walls",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC01836-NR-20260320.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Contemporary roof with layered horizontal edges",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01839-20260320.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "A person in a red jacket working outdoors",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01840-NR-20260320.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Receding arches in a red wall",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01843-NR-20260320.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Ginger cat walking along a wall",
+          "layout": "solo"
+        }
+      ],
+      "cover_alt": "A small orange and blue bird on a reed",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "longxi",
+      "location": "Longxi · China",
+      "date": "2026-02-21",
+      "date_start": "2026-02-15",
+      "title": "Longxi sees in the New Year.",
+      "description": "Spring Festival at home, from freshly written couplets to lanterns, a parade and sparks after dark.",
+      "section_title": "More from these walks.",
+      "cover": "DSC01421-20260215",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC01421-20260215.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "A procession in red with colourful decorations",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01379-20260215.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Pedestrians and a bicycle beside bright red couplets",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01385-20260215.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "A customer beside a red-decorated market stall",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01397-20260215.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Red lanterns lining a snowy city street",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01399-20260215.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Narrow wet alley viewed from above",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01404-20260215.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "A calligrapher writing on red paper",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01408-20260215.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Rows of red festive couplets",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01410-20260215.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Crowds filling a market lane",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01411-20260215.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Traffic beneath a traditional tower",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01523-NR-20260221.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "An illuminated festive arch and a traditional tower",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01524-NR-20260221.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Colourful lanterns overhead at night",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01539-NR-20260221.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Sparks lighting a dark street",
+          "layout": "landscape"
+        }
+      ],
+      "cover_alt": "A procession in red with colourful decorations",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "lanzhou",
+      "location": "Lanzhou · China",
+      "date": "2026-02-07",
+      "title": "A short February stop in Lanzhou.",
+      "description": "A train platform, red lanterns and a quiet patch of winter water, all on the same stop.",
+      "section_title": "More from the day.",
+      "cover": "DSC01356-20260207",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC01356-20260207.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Wooden pier over partly frozen water",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01346-20260207.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "A high-speed train at a station platform",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01349.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Bright yellow wall and a dark railing against blue sky",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC01350-20260207.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "City traffic between tall buildings",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01358-20260207.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Red lanterns above the railing of a bridge",
+          "layout": "landscape"
+        }
+      ],
+      "cover_alt": "Wooden pier over partly frozen water",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "xian",
+      "location": "Xi’an · China",
+      "date": "2026-02-01",
+      "title": "Xi’an, from pagoda to pavilion.",
+      "description": "A pagoda, a night-lit pavilion and a bird that chose the exact moment I had the camera ready.",
+      "section_title": "More from the day.",
+      "cover": "DSC01304-20250201",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC01304-20250201.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Pagoda beside a dark statue",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01291-20260201.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "A wide city axis between buildings with traditional roofs",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01299-20260201.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Stone pagoda against blue sky",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC01311-20260201.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Traditional rooflines and hanging red lanterns",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01316-20260201.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Waterbird holding a fish",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01323-20260201.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Dark bird flying low over water",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01344-NR-20260201.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Illuminated pavilion against the night sky",
+          "layout": "landscape"
+        }
+      ],
+      "cover_alt": "Pagoda beside a dark statue",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "longxi",
+      "location": "Longxi · China",
+      "date": "2026-01-25",
+      "title": "A January walk around Longxi.",
+      "description": "A quiet stretch of January, with a bird in the evergreens, a crescent moon and an open window.",
+      "section_title": "More from the day.",
+      "cover": "DSC01243",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC01243.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Painted gateway with red lanterns framing a distant tower",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01238-NR.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "A bird resting on an evergreen branch",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01247.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "A red-roofed gateway in a square",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01256.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "A street vendor’s cart loaded with red produce",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01263-NR.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Apartment buildings beneath pink and grey clouds",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01264-NR.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Crescent moon above tall buildings at blue hour",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01272.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "An open window projecting into a pale sky",
+          "layout": "landscape"
+        }
+      ],
+      "cover_alt": "Painted gateway with red lanterns framing a distant tower",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "night-sky",
+      "location": "Night sky",
+      "date": "2026-01-15",
+      "title": "My first attempt at star trails.",
+      "description": "The stars did their part. The camera and I were still working out the rest.",
+      "section_title": "More from the day.",
+      "cover": "20250103-1",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "20250103-1.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Faint curved star trails against a dark blue sky",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "Faint curved star trails against a dark blue sky",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "longxi",
+      "location": "Longxi · China",
+      "date": "2026-01-03",
+      "title": "Snow at the Li Ancestral Hall.",
+      "description": "Snow picked out the rooflines and softened the courtyard. The resident cats had already found the sheltered spots.",
+      "section_title": "More from the day.",
+      "cover": "DSC01047",
+      "cover_center": [
+        0.5,
+        0.48
+      ],
+      "photos": [
+        {
+          "file": "DSC01047.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Bright ribbons leading to a hall across a snowy courtyard",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01034.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Snowy courtyard in front of a traditional hall",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01036.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Leaves dusted with snow against a red wall",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01042.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Circular painted roof and snow-covered tiles",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01043_1.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "An ornate plaque beneath curved snowy eaves",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01044.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Snow-covered hall with colourful trim",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01046.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Round painted pavilion seen from below",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01056.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Tabby cat on a snowy stone path",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01057.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Cat sheltering under dark green leaves",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01062.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Calico cat beside a snow-dusted tree",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "Bright ribbons leading to a hall across a snowy courtyard",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "lanzhou",
+      "location": "Lanzhou · China",
+      "date": "2025-12-28",
+      "title": "The Yellow River, late in the day.",
+      "description": "Winter light on the river in Lanzhou. A bird left a better trail across the water than I did along the bank.",
+      "section_title": "More from the day.",
+      "cover": "DSC01010",
+      "cover_center": [
+        0.55,
+        0.45
+      ],
+      "photos": [
+        {
+          "file": "DSC01010.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Bird leaving a wake on sunset-coloured water",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00986.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Blue bus beside an orange building",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00990.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Crescent moon framed by black branches",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01002.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "A pavilion silhouetted against distant hills at sunset",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01004.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Bridge cables in front of a silhouetted pavilion",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01014.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Bare trees beside a pale riverbank",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC01016.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Bird tracks across blue-tinted snow",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC01021-NR-1.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Silhouette of a statue against twilight",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01023-NR.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Statue above stone steps under blue sky",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC01026-NR.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "The moon above a dark statue",
+          "layout": "solo"
+        }
+      ],
+      "cover_alt": "Bird leaving a wake on sunset-coloured water",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "longxi",
+      "location": "Longxi · China",
+      "date": "2025-12-22",
+      "date_start": "2025-12-03",
+      "title": "Longxi, between market days.",
+      "description": "December walks through Longxi, from streets at dusk to a market with crates of little red fruit.",
+      "section_title": "More from these walks.",
+      "cover": "DSC00814",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC00814.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Traditional gates above a busy road",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00789.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Close view of layered temple roofs",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00793.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "People gathered in a narrow market street",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00797.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Traffic and tangled cables in a narrow street",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00802.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "A person on a scooter among market stalls",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00805.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Children walking past market stalls",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00807.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "A shopper passing piled goods",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00813.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "A broad street leading towards a traditional tower",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00816.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Traffic and dark hills at dusk",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00820.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Shoppers at a warmly lit counter after dark",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00955.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Seated vendor beside a stack of orange fruit",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00957.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Crates packed with small red fruit",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "Traditional gates above a busy road",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "longxi",
+      "location": "Longxi · China",
+      "date": "2025-12-14",
+      "title": "A December climb at Renshou Mountain.",
+      "description": "Table tennis below, winter light on the climb, and all of Longxi spread out at the top.",
+      "section_title": "More from the day.",
+      "cover": "DSC00941",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC00941.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Longxi spread out beneath winter hills",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00898.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Two people playing outdoor table tennis",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00899.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Children on a climbing frame",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00912.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Steps rising between trees",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00918.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Light through cross-shaped openings in a wall",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00921.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A torn opening in translucent sheeting",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00929.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Circular wooden bench in slanting sunlight",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00934.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Stone arch framing a patch of daylight",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00951.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Steam rising from stacked trays at a stall",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "Longxi spread out beneath winter hills",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "longxi",
+      "location": "Longxi · China",
+      "date": "2025-11-16",
+      "date_start": "2025-11-13",
+      "title": "Longxi, from the gate to the hills.",
+      "description": "A few November days at home, between street murals, an old gate and the dry colours of the hills.",
+      "section_title": "More from these walks.",
+      "cover": "DSC00740",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC00740.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Traditional tower over a stone gate",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00728.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Tom and Jerry mural around two arched windows",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00735.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Seated person near colourful decorations",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00751.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Group wearing matching yellow hats outside a building",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00753.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Dry hills and gullies under a pale sky",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00755.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Layered brown ridges from a distance",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00770.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Fine seed hairs catching sunlight",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00785_1.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "A yellow flower among dark leaves",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "Traditional tower over a stone gate",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "longxi",
+      "location": "Longxi · China",
+      "date": "2025-11-10",
+      "date_start": "2025-10-25",
+      "title": "Back home, at walking pace.",
+      "description": "Street games, small encounters and familiar streets in Longxi. The camera had plenty to do close to home.",
+      "section_title": "More from these walks.",
+      "cover": "DSC00706",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC00706.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Two people leaning over a table in black and white",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00689_1.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "People gathered around a small table outdoors",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00690.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Stone figure in a tall headdress",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00694.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "A rider on a tree-lined road",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00697.webp",
+          "width": 1239,
+          "height": 1857,
+          "alt": "Someone holding a small black dog",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00701.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Child in a red jacket",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00702_1.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Seated man in black and white",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00702_2.webp",
+          "width": 1223,
+          "height": 1833,
+          "alt": "Black-and-white close-up of a man with smoke",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00710-NR.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Carved figure photographed in black and white",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00721.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "A dandelion seed head in soft light",
+          "layout": "portrait"
+        }
+      ],
+      "cover_alt": "Two people leaning over a table in black and white",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "beijing",
+      "location": "Beijing · China",
+      "date": "2025-10-06",
+      "title": "The Mid-Autumn Moon, stacked.",
+      "description": "One Moon, several exposures and a fair bit of patience.",
+      "section_title": "More from the day.",
+      "cover": "mid-autumn-moon",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "mid-autumn-moon.webp",
+          "width": 1874,
+          "height": 1249,
+          "alt": "A stacked close-up of the full Moon against a black sky",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "A stacked close-up of the full Moon against a black sky",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "beijing",
+      "location": "Beijing · China",
+      "date": "2025-10-03",
+      "date_start": "2025-09-20",
+      "title": "Fengtai in changing light.",
+      "description": "A few walks through Fengtai, with glass towers, geese and late sunlight making familiar corners worth a second look.",
+      "section_title": "More from these walks.",
+      "cover": "DSC00508",
+      "cover_center": [
+        0.42,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC00508.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Long bands of sunlight on a shaded walkway",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00343-NR.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Orange reflections between dark buildings",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00351.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Scooters on a shaded lane",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00451_1.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Orange object suspended beneath a concrete structure",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00453.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Two blue glass towers against bright sky",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00457.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Apartment block catching low sunlight",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00461.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Three geese looking in one direction",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00472.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Angular glass facade against a blue sky",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00473.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Open window in a grid of reflective glass",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00476.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Tower beneath a softly coloured sky",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00477-NR.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Orange reflections on dark glass panels",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00488.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Geometric building facade in sunlight",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00489.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Gold lines across a dark building exterior",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00494.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Traffic and cyclists on a sunlit street",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00503.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Curving tower seen from below",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00512-NR.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Seated person with a dog beside the road",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00517.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Pylon silhouetted against orange clouds",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00521-NR.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Blue flowers in low light",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00531.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Thin bands of light across a dark structure",
+          "layout": "landscape"
+        }
+      ],
+      "cover_alt": "Long bands of sunlight on a shaded walkway",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "beijing",
+      "location": "Beijing · China",
+      "date": "2025-09-19",
+      "title": "The lions had front-row seats.",
+      "description": "An evening at Lugou Bridge, where the stone lions had seen this sunset before and still looked impressed.",
+      "section_title": "More from the day.",
+      "cover": "DSC00439",
+      "cover_center": [
+        0.62,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC00439.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Row of stone lions against the orange sky",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00355.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Sunlight showing the texture of old bricks",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00365.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Bridges spanning a stretch of water",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00372.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Stone lion in deep shadow",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00376.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Close-up of a stone lion in warm light",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00377.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Stone lion with a river behind it",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00379_1.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Row of weathered lions in low sun",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00381.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Carved lion with smaller figures at its feet",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00398.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Worn stones catching strips of golden light",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00400-NR.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "High-speed train beyond a riverside lion",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00409.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Setting sun flaring beside a lion silhouette",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00410_1.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Utility lines silhouetted against a pink sky",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00416.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Sun setting behind a layer of clouds",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00420.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Sun dropping behind dark trees",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00433.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Hills under a peach-coloured sky",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00435.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "A person among lion silhouettes on the bridge",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00442.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Traditional roof with a plane in the distance",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "Row of stone lions against the orange sky",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "beijing",
+      "location": "Beijing · China",
+      "date": "2025-09-07",
+      "title": "Jingshan after sunset.",
+      "description": "A rooftop silhouette, Beijing’s skyline and a rising moon. The city finally had some competition.",
+      "section_title": "More from the day.",
+      "cover": "DSC00301-NR",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC00301-NR.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Bright moon above Beijing’s skyline at night",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00263.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Street seen through a shadowed arch",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00270.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Small lit leaves against a dark background",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00287.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Traditional rooftops silhouetted against a golden sky",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00290.webp",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Beijing buildings catching the last light",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00291.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Tall tower lit by the setting sun",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00297.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Bare branches against a dusk sky",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00299-NR.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Golden moon partly veiled by clouds",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00302-NR.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Moon and buildings in a vertical night view",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00307-NR.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Lit moon over the city skyline",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00310-NR.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Close view of a golden full moon",
+          "layout": "landscape"
+        }
+      ],
+      "cover_alt": "Bright moon above Beijing’s skyline at night",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "beijing",
+      "location": "Beijing · China",
+      "date": "2025-08-17",
+      "title": "A lotus pond with regulars.",
+      "description": "Lotus Pond Park in August. The sparrows and dragonflies seemed to know all the good spots.",
+      "section_title": "More from the day.",
+      "cover": "DSC00125",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "DSC00125.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Open pink lotus against a green background",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00120.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Yellow flowers against dark foliage",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00124.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Pink lotus bud among large leaves",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00128.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Sparrow beside a folded lotus leaf",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00131.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Sparrow on a sunlit stone railing",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00132.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Pink lotus in soft green light",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00133.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Dragonfly on a dry lotus bud",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00136.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Red dragonfly perched on a green seed pod",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00147.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Lotus leaves along a shaded pond",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00152.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Droplet and a slender insect on a lotus leaf",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00154.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Water droplet pooled in a dark green leaf",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00155.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Pale lotus flower opening around its seed head",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00160.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "White lotus above a bed of leaves",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00161.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Person in a straw hat at the edge of the pond",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00166.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "City buildings reflected in the pond",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00169.webp",
+          "width": 1281,
+          "height": 1920,
+          "alt": "Dark water framed by lotus foliage",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00178.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Pale lotus against green leaves",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00179.webp",
+          "width": 1920,
+          "height": 1281,
+          "alt": "Deep pink lotus in the shade",
+          "layout": "landscape"
+        }
+      ],
+      "cover_alt": "Open pink lotus against a green background",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "beijing",
+      "location": "Beijing · China",
+      "date": "2025-07-21",
+      "title": "The ducks stayed for sunset.",
+      "description": "An evening at Yuyuantan Park, from lotus leaves to the tower’s reflection. The ducks had the best seats.",
+      "section_title": "More from the day.",
+      "cover": "20250721_DSC03919",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "20250721_DSC03919.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Television tower silhouetted above the lake at sunset",
+          "layout": "solo"
+        },
+        {
+          "file": "20250721_DSC03873.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Three rabbit ornaments with flowers",
+          "layout": "wide"
+        },
+        {
+          "file": "20250721_DSC03877-NR.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Small yellow flowers in the shade",
+          "layout": "solo"
+        },
+        {
+          "file": "20250721_DSC03883-NR.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Water breaking into white foam",
+          "layout": "landscape"
+        },
+        {
+          "file": "20250721_DSC03886.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Stone bridge above sunlit lotus leaves",
+          "layout": "landscape"
+        },
+        {
+          "file": "20250721_DSC03892.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A green lotus leaf lit from behind",
+          "layout": "wide"
+        },
+        {
+          "file": "20250721_DSC03895.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Pink lotus against a dark background",
+          "layout": "solo"
+        },
+        {
+          "file": "20250721_DSC03901-NR.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A duck surrounded by concentric ripples",
+          "layout": "landscape"
+        },
+        {
+          "file": "20250721_DSC03905.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Two ducks silhouetted on reflective water",
+          "layout": "landscape"
+        },
+        {
+          "file": "20250721_DSC03922.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "A duck crossing golden ripples",
+          "layout": "portrait"
+        },
+        {
+          "file": "20250721_DSC03933.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "The sun casting a column of gold on the lake",
+          "layout": "portrait"
+        },
+        {
+          "file": "20250721_DSC03945.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Television tower against an orange and violet sky",
+          "layout": "solo"
+        },
+        {
+          "file": "20250721_DSC03956-NR.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Ducks crossing the tower’s reflection at dusk",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "Television tower silhouetted above the lake at sunset",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "beijing",
+      "location": "Beijing · China",
+      "date": "2024-10-02",
+      "title": "The roofs came out in gold.",
+      "description": "National Day at the Forbidden City, where even the roof ornaments looked dressed for the occasion.",
+      "section_title": "More from the day.",
+      "cover": "IMG_9359",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "IMG_9359.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A palace gate with red walls and golden roof tiles",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_9367.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Painted beams and a plaque between tiled roofs",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_9370.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Bronze lion in front of red palace walls",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_9372.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Bronze guardian lion beside a white stone balustrade",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_9380.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Figure silhouetted inside a palace opening",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_9381.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Small stone lion in soft sunlight",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_9382.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A row of roof figures against blue sky",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_9386.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "White pagoda beyond golden roof tiles",
+          "layout": "solo"
+        },
+        {
+          "file": "IMG_9387.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Palace courtyard seen through a stone gateway",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_9391.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Red wall viewed through a stone arch",
+          "layout": "solo"
+        },
+        {
+          "file": "IMG_9395.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Golden tile roof and a distant pavilion",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_9399.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Glass tower rising behind a traditional roof",
+          "layout": "solo"
+        }
+      ],
+      "cover_alt": "A palace gate with red walls and golden roof tiles",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "tianjin",
+      "location": "Tianjin · China",
+      "date": "2024-06-09",
+      "title": "Tianjin, just before dark.",
+      "description": "Back by the river for sunset, with the Ferris wheel, a crescent moon and a clock tower keeping time.",
+      "section_title": "More from the day.",
+      "cover": "IMG_8494",
+      "cover_center": [
+        0.5,
+        0.44
+      ],
+      "photos": [
+        {
+          "file": "IMG_8494.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Tianjin Eye above the river at dusk",
+          "layout": "solo"
+        },
+        {
+          "file": "IMG_8487.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Low sun beside a tower over water",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_8488.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Sunset reflected on the river between buildings",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_8495.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "A statue and a tiny plane against an evening sky",
+          "layout": "solo"
+        },
+        {
+          "file": "IMG_8496.webp",
+          "width": 1416,
+          "height": 944,
+          "alt": "Thin crescent moon in a blue sky",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_8499.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Illuminated clock tower against the night sky",
+          "layout": "solo"
+        }
+      ],
+      "cover_alt": "Tianjin Eye above the river at dusk",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "tianjin",
+      "location": "Tianjin · China",
+      "date": "2024-05-01",
+      "title": "A river walk with pigeons.",
+      "description": "Along the Hai River, among fishing rods, city clocks and a pigeon that knew exactly where to stand.",
+      "section_title": "More from the day.",
+      "cover": "IMG_6962",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "IMG_6962.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A red bridge and the Tianjin Eye",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_6956.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Two people walking through a shadowed underpass",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_6959.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Clock tower between green trees",
+          "layout": "solo"
+        },
+        {
+          "file": "IMG_6960.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Colourful graffiti on a concrete wall",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_6969.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "A person carrying bright decorations in a passage",
+          "layout": "solo"
+        },
+        {
+          "file": "IMG_6971.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Anglers beside the river under umbrellas",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6987.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "White pigeon perched on a tiled roof",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6988.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Pigeon on bright green grass",
+          "layout": "solo"
+        },
+        {
+          "file": "IMG_6991.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Child crouching near pigeons on a plaza",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_6998.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Clock in deep architectural shadows",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6999.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Street performer with colourful balloons",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_7002.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Cat walking along a brick wall",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_7003.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Warm sunlight on a curved building facade",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_7010.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Tall tower against a pink sunset sky",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_7014.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Clock tower under deep blue evening sky",
+          "layout": "solo"
+        },
+        {
+          "file": "IMG_7015.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Hanging detail reflected in blue glass",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "A red bridge and the Tianjin Eye",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "changsha",
+      "location": "Changsha · China",
+      "date": "2024-04-14",
+      "date_start": "2024-04-13",
+      "title": "Changsha, with frequent stops.",
+      "description": "Two days of street corners, river crossings and evening crowds. There was always a reason to stop again.",
+      "section_title": "More from these walks.",
+      "cover": "IMG_6721",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "IMG_6721.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A traditional pavilion lit gold at night",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_6704.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A docked boat with a bridge in the distance",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6710.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Sunlit orange leaves",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6713.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Small bright disc above a slender pole in blue sky",
+          "layout": "solo"
+        },
+        {
+          "file": "IMG_6716.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A crowd at a busy crossing",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_6717.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Low sun spilling into a crowded pedestrian street",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6718.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Seated figure silhouetted in warm street light",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6719.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "A seated vendor and passers-by at dusk",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6720.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "The low sun between dark buildings",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6724.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Pedestrians crossing in front of colourful shop signs",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_6725.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Black-and-white balconies of an apartment building",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6727.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Bright rectangular opening in a dark stone passage",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6730.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Small dog tucked beside a scooter",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6731.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Pedestrian in red beside a bus",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6737.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Droplets on green leaves",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6738.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A large stone portrait against blue sky",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6742.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Small bird standing on paving stones",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6743.webp",
+          "width": 1920,
+          "height": 962,
+          "alt": "Sparrow peering through a stone railing",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6744.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Seated man beside a red column",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6745.webp",
+          "width": 1383,
+          "height": 1920,
+          "alt": "Older apartment blocks against newer towers",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6746.webp",
+          "width": 1263,
+          "height": 1920,
+          "alt": "Sculpture on top of a building marked IFS",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6749.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "People resting beneath a tiled roof",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6759.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Small white flowers among waxy leaves",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6761.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Ripples catching light on dark water",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6765.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "A street vendor carrying colourful balloons",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6767.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Pedestrians casting long shadows",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6773.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Blue tower framed by two dark roofs",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6774.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Tall blue buildings rising above the foreground",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6775.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Sunlight on a river under a bridge",
+          "layout": "solo"
+        },
+        {
+          "file": "IMG_6776.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Two people walking past a bright river",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6777.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Small blue sightseeing train",
+          "layout": "landscape"
+        },
+        {
+          "file": "IMG_6779.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Traditional roof above a street full of signs",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6780.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Traffic under a blue road sign",
+          "layout": "portrait"
+        },
+        {
+          "file": "IMG_6781.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Low evening sun on buildings at an intersection",
+          "layout": "solo"
+        },
+        {
+          "file": "IMG_6783.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A packed pedestrian crossing in late light",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_6785.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Stacked shop signs on a narrow street",
+          "layout": "solo"
+        }
+      ],
+      "cover_alt": "A traditional pavilion lit gold at night",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "beijing",
+      "location": "Beijing · China",
+      "date": "2024-03-17",
+      "title": "An unreasonable number of Minions.",
+      "description": "One day at Universal Beijing Resort, from bright yellow Minions to a pack of Transformers.",
+      "section_title": "More from the day.",
+      "cover": "DSC00889-202403200008",
+      "cover_center": [
+        0.5,
+        0.45
+      ],
+      "photos": [
+        {
+          "file": "DSC00889-202403200008.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Three Minions with arms raised in turquoise water",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00885-202403200005.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Minion Land sign surrounded by yellow Minions",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00917-202403200010.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "A Minion figure suspended below red rings",
+          "layout": "solo"
+        },
+        {
+          "file": "DSC00939-202403220022.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A Minion above a mirrored disco ball",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00940-202403220023.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Minion on a colourful building facade",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00941-202403220024.webp",
+          "width": 1437,
+          "height": 1920,
+          "alt": "A Minion figure against a clear blue sky",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00953-202403220028.webp",
+          "width": 1440,
+          "height": 1920,
+          "alt": "Hogwarts castle towers",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00954-202403220029.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Performer carrying a prop beside a stone wall",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00955-202403220030.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Performer holding a cushion in a courtyard",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC00979-202403230042.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Lantern glowing inside a dim room",
+          "layout": "wide"
+        },
+        {
+          "file": "DSC00991-202403240045.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "A costumed tiger in a wooden doorway",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00995-202403240048.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Silver Transformer outside a building",
+          "layout": "portrait"
+        },
+        {
+          "file": "DSC00998-202403240049.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Blue and red Transformer against the sky",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01011-202403240053.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Yellow Transformer with a close-up of its face",
+          "layout": "landscape"
+        },
+        {
+          "file": "DSC01383-NR-202403240061.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "A stage set lit in blue and purple",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "Three Minions with arms raised in turquoise water",
+      "cover_width": 864,
+      "cover_height": 648
+    },
+    {
+      "city": "beijing",
+      "location": "Beijing · China",
+      "date": "2023-12-17",
+      "title": "First frames at the Summer Palace.",
+      "description": "A frozen lake, tiled roofs and my first outing with the camera. The palace made a very patient subject.",
+      "section_title": "More from the day.",
+      "cover": "IMG_3424",
+      "cover_center": [
+        0.5,
+        0.5
+      ],
+      "photos": [
+        {
+          "file": "IMG_3424.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "An icy lake and the Summer Palace in the distance",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_3430.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Painted timber and curved roof tiles against blue sky",
+          "layout": "wide"
+        },
+        {
+          "file": "IMG_3436.webp",
+          "width": 1280,
+          "height": 1920,
+          "alt": "Tower framed by a shadowed pavilion opening",
+          "layout": "solo"
+        },
+        {
+          "file": "IMG_3440.webp",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Ornate pavilion above a tall stone wall",
+          "layout": "wide"
+        }
+      ],
+      "cover_alt": "An icy lake and the Summer Palace in the distance",
       "cover_width": 864,
       "cover_height": 648
     }

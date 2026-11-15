@@ -56,7 +56,7 @@ def update_page_metadata(root, page, cover=None):
         image, alt = cover or ("image/GEM01.jpg", "Ian Ding")
         image_url = SITE + "/" + quote(image)
         lines.append(f'  <link rel="canonical" href="{url}">')
-        is_article = (cover is not None and len(path.parts) > 2) or path.as_posix() == "notes/sorting/index.html"
+        is_article = (cover is not None and len(path.parts) > 2 and path.parts[:2] != ("moments", "archive")) or path.as_posix() == "notes/sorting/index.html"
         properties = {
             "og:type": "article" if is_article else "website",
             "og:site_name": "Ian Ding",

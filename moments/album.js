@@ -68,7 +68,7 @@
   viewer.querySelector('[data-viewer-previous]').addEventListener('click', () => move(-1));
   viewer.querySelector('[data-viewer-next]').addEventListener('click', () => move(1));
   viewer.addEventListener('keydown', (event) => {
-    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    if (links.length === 1 || (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight')) return;
     event.preventDefault();
     move(event.key === 'ArrowLeft' ? -1 : 1);
   });

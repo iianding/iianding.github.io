@@ -18,6 +18,8 @@ from site_metadata import update_page_metadata, update_sitemap
 ROOT = Path(__file__).resolve().parents[1]
 COLLECTION = ROOT / "moments/index.html"
 HOME = ROOT / "index.html"
+ARCHIVE = ROOT / "moments/archive"
+ALBUMS_PER_PAGE = 8
 
 
 def relative(target, page):
@@ -56,8 +58,28 @@ def identifier(album):
 
 
 def display_date(album):
-    value = date.fromisoformat(album["date"])
-    return f"{value.day} {value.strftime('%B')} {value.year}"
+    end = date.fromisoformat(album["date"])
+    if "date_start" not in album:
+        return f"{end.day} {end:%B %Y}"
+    start = date.fromisoformat(album["date_start"])
+    if start.year != end.year:
+        return f"{start.day} {start:%B %Y}–{end.day} {end:%B %Y}"
+    if start.month != end.month:
+        return f"{start.day} {start:%B}–{end.day} {end:%B %Y}"
+    return f"{start.day}–{end.day} {end:%B %Y}"
+
+
+def photo_count(album):
+    count = len(album["photos"])
+    return f"{count} photograph" if count == 1 else f"{count} photographs"
+
+
+def collection_path(number):
+    return COLLECTION if number == 1 else ARCHIVE / str(number) / "index.html"
+
+
+def collection_for_album(index):
+    return collection_path(index // ALBUMS_PER_PAGE + 1)
 
 
 def heart_button(album, cover=False):
@@ -99,17 +121,30 @@ def render_page(album, albums, index, header, footer):
     title = escape(album["title"])
     description = escape(album["description"], quote=True)
     count = len(album["photos"])
-    back = relative(COLLECTION, page) + "#" + identifier(album)
+    back = relative(collection_for_album(index), page) + "#" + identifier(album)
     photos = [photo_markup(photo, album, page, i == 0) for i, photo in enumerate(album["photos"])]
     page_header = rebase(header, COLLECTION, page).replace('aria-current="page"', 'aria-current="location"')
     page_footer = rebase(footer, COLLECTION, page)
     remaining = "\n".join(photos[1:])
+    sequence = f'''        <section class="album-sequence" aria-labelledby="album-photos-title">
+          <div class="moment-album-heading">
+            <h2 id="album-photos-title">{escape(album['section_title'])}</h2>
+            <p>Select a photograph to see the full frame.</p>
+          </div>
+          <div class="album-grid">
+{remaining}
+          </div>
+        </section>''' if remaining else ""
+    signoff = album.get("signoff")
+    signoff_markup = f'        <p class="album-signoff">{escape(signoff)}</p>\n' if signoff else ''
+    single_class = " photo-viewer-single" if count == 1 else ""
+    single_control = " hidden disabled" if count == 1 else ""
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{title} {description} {count} photographs from {display_date(album)}, by Ian Ding.">
+  <meta name="description" content="{title} {description} {photo_count(album)} from {display_date(album)}, by Ian Ding.">
   <meta name="theme-color" content="#ffffff">
   <title>{title} — Moments — Ian Ding</title>
   <link rel="stylesheet" href="{versioned_asset(ROOT / 'style.css', page)}">
@@ -130,22 +165,13 @@ def render_page(album, albums, index, header, footer):
           <p class="moment-location">{escape(album['location'])}</p>
           <h1 id="page-title">{title}</h1>
           <p class="lead">{escape(album['description'])}</p>
-          <div class="moment-detail-meta"><span class="moment-kind glass-surface">Photo journal</span><time datetime="{album['date']}">{display_date(album)}</time><span>{count} photographs</span>{heart_button(album)}</div>
+          <div class="moment-detail-meta"><span class="moment-kind glass-surface">Photo journal</span><time datetime="{album['date']}">{display_date(album)}</time><span>{photo_count(album)}</span>{heart_button(album)}</div>
         </div>
         <div class="album-opening">
 {photos[0]}
         </div>
-        <section class="album-sequence" aria-labelledby="album-photos-title">
-          <div class="moment-album-heading">
-            <h2 id="album-photos-title">{escape(album['section_title'])}</h2>
-            <p>Select a photograph to see the full frame.</p>
-          </div>
-          <div class="album-grid">
-{remaining}
-          </div>
-        </section>
-        <p class="album-signoff">{escape(album['signoff'])}</p>
-        <div class="album-appreciation"><p>The camera accepts compliments.</p>{heart_button(album)}</div>
+{sequence}
+{signoff_markup}        <div class="album-appreciation"><p>The camera accepts compliments.</p>{heart_button(album)}</div>
       </article>
 {pagination(albums, index, page)}
       <nav class="album-return" aria-label="Album navigation">
@@ -155,7 +181,7 @@ def render_page(album, albums, index, header, footer):
     </main>
 {page_footer}
   </div>
-  <dialog id="photo-viewer" class="photo-viewer" aria-labelledby="viewer-title">
+  <dialog id="photo-viewer" class="photo-viewer{single_class}" aria-labelledby="viewer-title">
     <div class="viewer-toolbar">
       <p id="viewer-title" class="viewer-title">{title}</p>
       <p class="viewer-count" aria-live="polite" aria-atomic="true">1 / {count}</p>
@@ -166,9 +192,9 @@ def render_page(album, albums, index, header, footer):
       <p class="viewer-status" role="status">Loading photograph&hellip;</p>
     </div>
     <div class="viewer-footer">
-      <button type="button" class="viewer-control glass-surface" data-viewer-previous aria-label="Previous photograph"><span aria-hidden="true">&larr;</span></button>
+      <button type="button" class="viewer-control glass-surface" data-viewer-previous{single_control} aria-label="Previous photograph"><span aria-hidden="true">&larr;</span></button>
       <p class="viewer-caption"></p>
-      <button type="button" class="viewer-control glass-surface" data-viewer-next aria-label="Next photograph"><span aria-hidden="true">&rarr;</span></button>
+      <button type="button" class="viewer-control glass-surface" data-viewer-next{single_control} aria-label="Next photograph"><span aria-hidden="true">&rarr;</span></button>
     </div>
   </dialog>
 </body>
@@ -176,31 +202,31 @@ def render_page(album, albums, index, header, footer):
 '''
 
 
-def collection_card(album, index):
+def collection_card(album, index, page):
     anchor = identifier(album)
-    count = len(album["photos"])
     loading = 'fetchpriority="high"' if index == 0 else 'loading="lazy"'
     return f'''          <li data-date="{album['date']}">
             <article id="{anchor}" class="moment-entry moment-entry-link glass-surface" aria-labelledby="{anchor}-title">
-              <a class="moment-open-link" href="{relative(album_path(album), COLLECTION)}" aria-labelledby="{anchor}-title"></a>
+              <a class="moment-open-link" href="{relative(album_path(album), page)}" aria-labelledby="{anchor}-title"></a>
               <div class="moment-copy">
                 <p class="moment-location">{escape(album['location'])}</p>
                 <h2 id="{anchor}-title">{escape(album['title'])}</h2>
                 <p class="moment-description">{escape(album['description'])}</p>
                 <div class="moment-entry-footer">
-                  <p class="moment-date"><time datetime="{album['date']}">{display_date(album)}</time><span>&middot; {count} photographs</span></p>
+                  <p class="moment-date"><time datetime="{album['date']}">{display_date(album)}</time><span>&middot; {photo_count(album)}</span></p>
                   <span class="moment-format">Open album <span aria-hidden="true">&nearr;</span></span>
                 </div>
               </div>
               <div class="moment-visual"><figure class="moment-photo glass-surface">
-                <img src="{versioned_asset(asset_folder(album) / 'previews/cover.webp', COLLECTION)}" width="{album.get('cover_width', 960)}" height="{album.get('cover_height', 720)}" alt="{escape(album['cover_alt'], quote=True)}" {loading} decoding="async">
+                <img src="{versioned_asset(asset_folder(album) / 'previews/cover.webp', page)}" width="{album.get('cover_width', 960)}" height="{album.get('cover_height', 720)}" alt="{escape(album['cover_alt'], quote=True)}" {loading} decoding="async">
               </figure>
               {heart_button(album, cover=True)}</div>
             </article>
           </li>'''
 
 
-def update_featured_album(album):
+def update_homepage(albums):
+    album = albums[0]
     cover = versioned_asset(asset_folder(album) / "previews/cover.webp", HOME)
     featured = f'''<a class="featured-card card-link glass-surface" data-featured-album href="{relative(album_path(album), HOME)}">
             <img class="featured-visual" src="{cover}" width="{album.get('cover_width', 960)}" height="{album.get('cover_height', 720)}" alt="" loading="lazy" decoding="async">
@@ -213,7 +239,61 @@ def update_featured_album(album):
           </a>'''
     page, found = re.subn(r'<a\b[^>]*\bdata-featured-album\b[^>]*>.*?</a>', lambda _: featured, HOME.read_text(), count=1, flags=re.S)
     assert found == 1
+    shortcuts = "\n".join(
+        f'              <li><a class="glass-surface" href="{relative(album_path(item), HOME)}"><span>{escape(item.get("shortcut", item["location"].split(" · ", 1)[0]))}</span><span aria-hidden="true">&nearr;</span></a></li>'
+        for item in albums[:4]
+    )
+    page, found = re.subn(
+        r'(<ul class="card-shortcuts" aria-label="Latest albums">)\n.*?\n(            </ul>)',
+        lambda match: f'{match[1]}\n{shortcuts}\n{match[2]}', page, count=1, flags=re.S,
+    )
+    assert found == 1
     HOME.write_text(page)
+
+
+def archive_navigation(page, number, pages):
+    if pages == 1:
+        return ""
+    newer = f'<a class="button" rel="prev" href="{relative(collection_path(number - 1), page)}">&larr; Newer</a>' if number > 1 else ''
+    older = f'<a class="button" rel="next" href="{relative(collection_path(number + 1), page)}">Older &rarr;</a>' if number < pages else ''
+    links = []
+    previous = 0
+    for index in sorted({1, pages, *range(max(1, number - 1), min(pages, number + 1) + 1)}):
+        if links and index > previous + 1:
+            links.append('<span class="moments-page-gap" aria-hidden="true">&hellip;</span>')
+        if index == number:
+            links.append(f'<span class="moments-page-number" aria-current="page">{index}</span>')
+        else:
+            links.append(f'<a class="moments-page-number glass-surface" href="{relative(collection_path(index), page)}" aria-label="Page {index}">{index}</a>')
+        previous = index
+    return f'''        <nav id="moments-pages" class="moments-pages" aria-label="Moments pages">
+          <div class="moments-page-links">{' '.join(links)}</div>
+          <div class="moments-page-directions">{newer}{older}</div>
+        </nav>'''
+
+
+def render_collection(source, albums, page, number, pages, offset, total):
+    if page != COLLECTION:
+        source = rebase(source, COLLECTION, page)
+        source = source.replace('<!DOCTYPE html>', '<!DOCTYPE html>\n<!-- Generated Moments archive page -->', 1)
+        source = source.replace('<title>Moments — Ian Ding</title>', f'<title>Moments, page {number} — Ian Ding</title>')
+        source = source.replace(' aria-current="page">Moments</a>', ' aria-current="location">Moments</a>')
+    cards = "\n".join(collection_card(album, index, page) for index, album in enumerate(albums))
+    navigation = archive_navigation(page, number, pages)
+    browse = '<a href="#moments-pages">Browse pages &darr;</a>' if navigation else '<span>Newest first</span>'
+    section = f'''      <section class="moments-journal" aria-label="Moments, newest first">
+        <div class="moments-order"><span>Albums {offset + 1}–{offset + len(albums)} of {total}</span>{browse}</div>
+        <!-- Generated from moments/albums.json by scripts/build_albums.py, newest shooting date first. -->
+        <ol class="moment-list" start="{offset + 1}">
+{cards}
+        </ol>
+{navigation}
+      </section>'''
+    updated, replacements = re.subn(r'      <section class="moments-journal".*?</section>', lambda _: section, source, count=1, flags=re.S)
+    assert replacements == 1
+    updated = re.sub(r'^  <link rel="stylesheet" href="[^"]*album\.css(?:\?[^"]*)?">\n', '', updated, count=1, flags=re.M)
+    stylesheet = versioned_asset(ROOT / "moments/album.css", page)
+    return updated.replace('</head>', f'  <link rel="stylesheet" href="{stylesheet}">\n</head>', 1)
 
 
 def main():
@@ -228,23 +308,26 @@ def main():
             assert (asset_folder(album) / photo["file"]).is_file()
             assert (asset_folder(album) / "previews" / photo["file"]).is_file()
         assert (asset_folder(album) / "previews/cover.webp").is_file()
-    update_featured_album(albums[0])
+    update_homepage(albums)
     source = COLLECTION.read_text()
     header = re.search(r"    <header>.*?</header>", source, re.S).group()
     footer = re.search(r"    <footer>.*?</footer>", source, re.S).group()
-    cards = "\n".join(collection_card(album, index) for index, album in enumerate(albums))
-    section = f'''      <section class="moments-journal" aria-label="Moments, newest first">
-        <div class="moments-order" aria-hidden="true"><span>Latest moments</span><span>Older stories below &darr;</span></div>
-        <!-- Generated from moments/albums.json by scripts/build_albums.py, newest shooting date first. -->
-        <ol class="moment-list">
-{cards}
-        </ol>
-      </section>'''
-    updated, replacements = re.subn(r'      <section class="moments-journal".*?</section>', lambda _: section, source, count=1, flags=re.S)
-    assert replacements == 1
-    updated = re.sub(r'href="\.\./style\.css(?:\?[^\"]*)?"', lambda _: f'href="{versioned_asset(ROOT / "style.css", COLLECTION)}"', updated, count=1)
-    updated = re.sub(r'src="\.\./glass-effects\.js(?:\?[^\"]*)?"', lambda _: f'src="{versioned_asset(ROOT / "glass-effects.js", COLLECTION)}"', updated, count=1)
-    COLLECTION.write_text(updated)
+    sections = []
+    pages = (len(albums) + ALBUMS_PER_PAGE - 1) // ALBUMS_PER_PAGE
+    for offset in range(0, len(albums), ALBUMS_PER_PAGE):
+        batch = albums[offset:offset + ALBUMS_PER_PAGE]
+        number = offset // ALBUMS_PER_PAGE + 1
+        page = collection_path(number)
+        if number > 1:
+            page.parent.mkdir(parents=True, exist_ok=True)
+        page.write_text(render_collection(source, batch, page, number, pages, offset, len(albums)))
+        sections.append((page, batch[0]))
+    collection_pages = {page for page, _ in sections}
+    for generated in ARCHIVE.glob("*/index.html"):
+        if generated not in collection_pages and "<!-- Generated Moments archive page -->" in generated.read_text():
+            generated.unlink()
+            if not any(generated.parent.iterdir()):
+                generated.parent.rmdir()
     for index, album in enumerate(albums):
         page = album_path(album)
         page.parent.mkdir(parents=True, exist_ok=True)
@@ -256,7 +339,7 @@ def main():
         )
         for album in albums
     }
-    covers[COLLECTION] = covers[album_path(albums[0])]
+    covers.update({page: covers[album_path(album)] for page, album in sections})
     urls = []
     shared = [ROOT / 'style.css', ROOT / 'glass-effects.js', ROOT / 'community-config.js', ROOT / 'community.js']
     for page in ROOT.rglob('*.html'):

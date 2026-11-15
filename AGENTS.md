@@ -9,7 +9,7 @@
 
 # Page hierarchy
 
-- Keep only the homepage `index.html` at the repository root. Every other HTML page, including draft templates, must have its own folder with an `index.html` entry file.
+- Keep the homepage `index.html` and the custom `404.html` at the repository root. Keep every other page, including draft templates, in its own folder with an `index.html` entry file.
 - Nest child pages inside their parent section's directory, recursively. Section landing pages live at `now/index.html`, `notes/index.html`, `projects/index.html` and `moments/index.html`.
 - Semester 1 course notebooks live at `now/semester-1/<course-code>/index.html`; future notes inside a course must use another child folder with its own `index.html`.
 - Use explicit relative links to each page's `index.html`, such as `./now/index.html`, rather than folder-only links. The user opens the homepage directly from disk, so navigation must work both with local `file://` URLs and on GitHub Pages. When moving or adding pages, verify navigation, parent links, anchors, shared styles/scripts and image paths at every nesting depth.
@@ -19,9 +19,9 @@
 
 - The user requires all website content to be in English. Translate Chinese content briefs into natural English titles and descriptions before publishing them in the website.
 - List real Moments entries newest first by the actual shooting or travel date. Never invent dates for draft entries.
-- Keep album titles, descriptions, dates, cover choices and photo sequences in `moments/albums.json`. Run `python3 scripts/build_albums.py` after edits to regenerate relative page links, the newest-first listing and adjacent-album navigation. This generates static HTML, so local browsing needs no server.
+- Keep album titles, descriptions, dates, cover choices and photo sequences in `moments/albums.json`. Run `python3 scripts/build_albums.py` after edits to regenerate relative page links, the newest-first listing and adjacent-album navigation. This generates static HTML, including the eight-album archive pages and each album’s return link, so local browsing needs no server.
 - Store each album or travel page at `moments/<city>/<YYYY-MM-DD>/index.html`.
-- Store its photographs at `memory_image/<city>/<YYYY-MM-DD>/`, retaining the camera filenames. Put resized previews and the directory cover in that album's `previews/` subfolder.
+- Store its photographs at `memory_image/<city>/<YYYY-MM-DD>/`, retaining the camera IDs and using single hyphens where export names contain repeated separators. Use the same filename for each full frame and its preview. Put resized previews and the directory cover in that album's `previews/` subfolder.
 - Prepare future photo assets from backed-up originals, using WebP with a maximum long edge of 1920px and encoder quality 83 for full-frame photographs, 960px and quality 79 for previews, and 864×648px and quality 79 for directory covers. Preserve the original aspect ratio for full frames and previews, and avoid upscaling. Preserve compositions and colour, and visually inspect detail after compression. Do not repeatedly recompress existing web assets. Keep dimensions in `moments/albums.json` in sync with the files.
 - Keep unused page templates at `moments/_templates/<template-name>/index.html`, outside the public Moments list. Shared album styles and interactions live at `moments/album.css` and `moments/album.js`.
 - Preserve full photograph compositions in the full-frame viewer. Directory covers and desktop pairings may crop for balance; mobile photo stacks should show natural proportions.

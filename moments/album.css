@@ -1,8 +1,16 @@
+.moments-pages { display: grid; justify-items: center; gap: 16px; margin-top: 40px; scroll-margin-top: 108px; }
+.moments-page-links, .moments-page-directions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; }
+.moments-page-number { display: grid; place-items: center; min-width: 44px; height: 44px; padding: 0 8px; border-radius: 999px; color: var(--muted); font-size: 13px; text-decoration: none; font-variant-numeric: tabular-nums; }
+.moments-page-number[aria-current] { color: var(--purple-strong); background: rgba(113, 59, 193, .09); font-weight: 650; }
+.moments-page-number:hover { color: var(--purple-strong); }
+.moments-page-gap { color: var(--muted); }
+
 /* Album photographs share the site's clear glass rim without changing the image. */
 .album-intro h1 { font-size: clamp(32px, 5.4vw, 60px); line-height: 1.2; }
 .album-intro .lead { max-width: 650px; }
 .album-opening, .album-sequence { width: 94%; max-width: 880px; margin-inline: auto; }
 .album-opening { margin-top: 36px; }
+.album-opening > .album-photo-solo { margin-inline: auto; }
 .album-sequence { margin-top: 44px; }
 .album-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
 .album-photo.glass-surface { display: block; min-width: 0; padding: 8px; overflow: hidden; border-radius: 28px; cursor: zoom-in; transition: border-color .2s ease, box-shadow .2s ease; }
@@ -32,6 +40,8 @@ body.photo-viewer-open { overflow: hidden; }
 .viewer-title { min-width: 0; margin: 0; font-size: 13px; font-weight: 500; overflow-wrap: break-word; }
 .viewer-count { flex-shrink: 0; margin: 0 0 0 auto; color: rgba(255, 255, 255, .72); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .viewer-control.glass-surface { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border-radius: 50%; color: white; font: inherit; font-size: 22px; line-height: 1; cursor: pointer; touch-action: manipulation; background: rgba(255, 255, 255, .09); }
+.viewer-control[hidden] { display: none; }
+.photo-viewer-single .viewer-caption { flex: 1; }
 .viewer-control:hover { background: rgba(255, 255, 255, .18); }
 .viewer-control[data-glass-active] > .glass-glint { opacity: .18; }
 .viewer-control:focus-visible { outline: 2px solid white; outline-offset: 4px; }
