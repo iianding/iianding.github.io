@@ -570,18 +570,160 @@ header nav a[aria-current="location"] {
   .module-card { transition: none; }
 }
 
-/* A tiny Minecraft-inspired footer status, permanently at zero for now. */
-footer { align-items: center; }
-.creeper-status { display: flex; align-items: center; gap: 8px; color: #303729; }
-.creeper-icon { flex-shrink: 0; width: 24px; height: 24px; image-rendering: pixelated; }
-.creeper-details { width: 146px; padding-top: 10px; }
-.creeper-meter { position: relative; }
-.creeper-percent { position: absolute; right: 0; bottom: calc(100% + 3px); font: 8px/1 monospace; color: #171b14; }
-.creeper-track { height: 10px; border: 2px solid #171b14; background: #e4e8db; box-shadow: 2px 2px 0 #171b14; padding: 1px; }
-.creeper-fill { display: block; width: 0%; height: 100%; background: #6eaf45; }
-.creeper-caption { display: block; margin-top: 5px; font-size: 9px; line-height: 1.5; }
+/* The footer's little Creeper charges in ten steps. */
+.creeper-control { max-width: 100%; }
+.creeper-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 9px 13px;
+  border-radius: 18px;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.creeper-status:hover { color: var(--purple-strong); border-color: rgba(113, 59, 193, .22); }
+.creeper-status:focus-visible { outline: 2px solid var(--purple); outline-offset: 4px; }
+.creeper-status:is(:disabled, [aria-disabled="true"]) { cursor: default; }
+.creeper-icon { display: block; flex-shrink: 0; width: 28px; height: 28px; border-radius: 5px; image-rendering: pixelated; }
+.creeper-details { display: grid; gap: 5px; min-width: 0; }
+.creeper-meter { display: grid; grid-template-columns: minmax(28px, 1fr) 4ch; align-items: center; gap: 7px; }
+.creeper-percent { color: var(--muted); font-size: 10px; font-variant-numeric: tabular-nums; text-align: right; }
+.creeper-track { overflow: hidden; height: 7px; border: 1px solid rgba(40, 75, 28, .16); border-radius: 999px; background: #edf0e9; }
+.creeper-fill { display: block; width: var(--creeper-charge, 0%); height: 100%; border-radius: inherit; background: linear-gradient(90deg, #8cbd62, #528c3a); transition: width 180ms ease-out; }
 @media (max-width: 420px) {
-  footer { align-items: flex-start; gap: 18px; }
+  .creeper-control { align-self: flex-end; }
+}
+
+/* The large sprite and particles exist only while the effect runs. */
+.creeper-overlay {
+  --creeper-side: min(48vmin, 27vh, 350px);
+  --creeper-side: min(48vmin, 27dvh, 350px);
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(237, 246, 232, .86), rgba(244, 239, 251, .72) 67%, rgba(250, 248, 253, .6));
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  animation: creeper-veil var(--creeper-duration) ease-out both;
+}
+.creeper-overlay:not(.creeper-quiet)::before {
+  content: "";
+  position: absolute;
+  width: min(84vmin, 64vh);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 5%, #e6d8f7bd 36%, transparent 69%);
+  opacity: 0;
+  animation: creeper-cloud .58s 870ms ease-out both;
+}
+.creeper-sprite {
+  display: grid;
+  justify-items: center;
+  width: var(--creeper-side);
+  transform-origin: center;
+  animation: creeper-enlarge var(--creeper-duration) ease-in-out both;
+}
+.creeper-head { z-index: 1; display: block; width: 100%; height: auto; image-rendering: pixelated; }
+.creeper-torso, .creeper-feet {
+  display: block;
+  background:
+    repeating-linear-gradient(90deg, #b7df8d24 0 25%, transparent 25% 50%),
+    repeating-linear-gradient(0deg, #27411d24 0 25%, transparent 25% 50%),
+    #619c42;
+  background-size: 56px 56px, 42px 42px, auto;
+  border: .07em solid #253621;
+  box-shadow: inset .12em 0 #b4db7c45, inset -.18em 0 #1b371c36;
+  font-size: calc(var(--creeper-side) / 3);
+}
+.creeper-torso { width: 57%; height: calc(var(--creeper-side) * .92); border-top-width: 0; }
+.creeper-feet {
+  width: 96%;
+  height: calc(var(--creeper-side) * .49);
+  border-top-width: 0;
+  background-image:
+    linear-gradient(90deg, transparent 45%, #253621 45% 55%, transparent 55%),
+    linear-gradient(0deg, #253621 20%, transparent 20%),
+    repeating-linear-gradient(90deg, #b7df8d2c 0 12%, transparent 12% 24%);
+  background-size: auto;
+}
+.creeper-pixel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--pixel-size);
+  height: var(--pixel-size);
+  background: var(--pixel-color);
+  box-shadow: 0 0 12px #e7d9fa80;
+  opacity: 0;
+  animation: creeper-burst .65s 920ms cubic-bezier(.12, .67, .26, 1) both;
+}
+.creeper-boom {
+  position: absolute;
+  bottom: max(10%, env(safe-area-inset-bottom));
+  margin: 0;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, .85);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: var(--glass-rim);
+  color: var(--purple-strong);
+  font-size: clamp(13px, 2.5vw, 17px);
+  font-weight: 600;
+  animation: creeper-message .55s 1080ms ease-out both;
+}
+.creeper-shaking .wrap { animation: creeper-shake .42s 940ms ease-out both; }
+body.creeper-shaking { overflow-x: clip; }
+@keyframes creeper-veil {
+  0%, 100% { opacity: 0; }
+  14%, 72% { opacity: 1; }
+}
+@keyframes creeper-enlarge {
+  0% { transform: scale(.52); filter: brightness(1) invert(0); opacity: 0; }
+  18% { opacity: 1; }
+  37% { transform: scale(1.02); filter: brightness(1) invert(0); }
+  46% { transform: scale(1.53); filter: brightness(0) invert(1); opacity: 1; }
+  53%, 100% { transform: scale(1.66); filter: brightness(0) invert(1); opacity: 0; }
+}
+@keyframes creeper-cloud {
+  0% { transform: scale(.25); opacity: 0; }
+  15% { opacity: .7; }
+  100% { transform: scale(1.48); opacity: 0; }
+}
+@keyframes creeper-burst {
+  0% { opacity: 0; transform: scale(.25); }
+  12% { opacity: .95; }
+  100% { opacity: 0; transform: translate(var(--pixel-x), var(--pixel-y)) rotate(95deg) scale(.54); }
+}
+@keyframes creeper-shake {
+  0%, 100% { transform: translate(0, 0); }
+  14% { transform: translate(-9px, 5px); }
+  29% { transform: translate(8px, -4px); }
+  44% { transform: translate(-6px, -2px); }
+  59% { transform: translate(5px, 3px); }
+  74% { transform: translate(-3px, 1px); }
+}
+@keyframes creeper-message {
+  0% { opacity: 0; transform: translateY(7px); }
+  34%, 100% { opacity: 1; transform: translateY(0); }
+}
+.creeper-quiet, .creeper-quiet .creeper-sprite, .creeper-quiet .creeper-boom { animation: none; }
+.creeper-quiet .creeper-sprite { transform: scale(.74); }
+@media (prefers-reduced-motion: reduce) {
+  .creeper-fill { transition: none; }
+  .creeper-overlay, .creeper-sprite, .creeper-boom, .creeper-shaking .wrap { animation: none; }
+  .creeper-pixel, .creeper-overlay::before { display: none; }
 }
 
 /* The portrait is a display surface, with a restrained reflection above it. */

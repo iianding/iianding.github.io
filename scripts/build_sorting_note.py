@@ -120,6 +120,7 @@ def main():
   <link rel="stylesheet" href="{versioned_asset(ROOT / 'style.css', PAGE)}">
   <link rel="stylesheet" href="{versioned_asset(PAGE.parent / 'sorting.css', PAGE)}">
   <script src="{versioned_asset(ROOT / 'glass-effects.js', PAGE)}" defer></script>
+  <script src="{versioned_asset(ROOT / 'creeper.js', PAGE)}" defer></script>
   <script src="{versioned_asset(ROOT / 'community-config.js', PAGE)}" defer></script>
   <script src="{versioned_asset(ROOT / 'community.js', PAGE)}" defer></script>
 {scripts}

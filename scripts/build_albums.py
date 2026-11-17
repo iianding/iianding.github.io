@@ -32,14 +32,15 @@ def versioned_asset(target, page):
     return relative(target, page) + "?v=" + version
 
 
-def rebase(fragment, source, destination):
+def rebase(fragment, source, destination, *, root_relative=False):
     def replace(match):
         attribute, value = match.groups()
         url = urlsplit(value)
         if url.scheme or url.netloc or not url.path:
             return match.group()
         target = (source.parent / unquote(url.path)).resolve()
-        value = urlunsplit(("", "", relative(target, destination), url.query, url.fragment))
+        path = "/" + target.relative_to(ROOT).as_posix() if root_relative else relative(target, destination)
+        value = urlunsplit(("", "", path, url.query, url.fragment))
         return f'{attribute}="{value}"'
 
     return re.sub(r'(href|src)="([^"]+)"', replace, fragment)
@@ -312,6 +313,7 @@ def main():
     source = COLLECTION.read_text()
     header = re.search(r"    <header>.*?</header>", source, re.S).group()
     footer = re.search(r"    <footer>.*?</footer>", source, re.S).group()
+    footer_base = re.search(r'      <div class="footer-base">.*?\n      </div>', footer, re.S).group()
     sections = []
     pages = (len(albums) + ALBUMS_PER_PAGE - 1) // ALBUMS_PER_PAGE
     for offset in range(0, len(albums), ALBUMS_PER_PAGE):
@@ -341,13 +343,19 @@ def main():
     }
     covers.update({page: covers[album_path(album)] for page, album in sections})
     urls = []
-    shared = [ROOT / 'style.css', ROOT / 'glass-effects.js', ROOT / 'community-config.js', ROOT / 'community.js']
+    shared = [ROOT / name for name in ('style.css', 'glass-effects.js', 'community-config.js', 'community.js', 'creeper.js')]
     for page in ROOT.rglob('*.html'):
         if '.git' in page.parts:
             continue
         if page == ROOT / '404.html':
             css_url = '/' + versioned_asset(ROOT / 'style.css', page).removeprefix('./')
             content = re.sub(r'href="/style\.css(?:\?[^"]*)?"', f'href="{css_url}"', page.read_text(), count=1)
+            error_footer = '    <footer>\n' + rebase(footer_base, COLLECTION, page, root_relative=True) + '\n    </footer>'
+            content = re.sub(r'    <footer>.*?</footer>', lambda _: error_footer, content, count=1, flags=re.S)
+            for asset in ('glass-effects.js', 'creeper.js'):
+                script = f'  <script src="/{versioned_asset(ROOT / asset, page).removeprefix("./")}" defer></script>'
+                content = re.sub(rf'^  <script src="/{re.escape(asset)}(?:\?[^"]*)?" defer></script>\n', '', content, flags=re.M)
+                content = content.replace('</head>', script + '\n</head>', 1)
             page.write_text(content)
             update_page_metadata(ROOT, page)
             continue
@@ -357,7 +365,7 @@ def main():
             attribute = 'href' if asset.suffix == '.css' else 'src'
             pattern = rf'{attribute}="[^\"]*(?<![\w-]){re.escape(asset.name)}(?:\?[^\"]*)?"'
             content, found = re.subn(pattern, lambda _: f'{attribute}="{versioned_asset(asset, page)}"', content, count=1)
-            if not found and asset.name.startswith('community'):
+            if not found and (asset.name.startswith('community') or asset.name == 'creeper.js'):
                 content = content.replace('</head>', f'  <script src="{versioned_asset(asset, page)}" defer></script>\n</head>')
         page.write_text(content)
         url = update_page_metadata(ROOT, page, covers.get(page))

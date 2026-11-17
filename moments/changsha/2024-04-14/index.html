@@ -6,12 +6,13 @@
   <meta name="description" content="Changsha, with frequent stops. Two days of street corners, river crossings and evening crowds. There was always a reason to stop again. 36 photographs from 13–14 April 2024, by Ian Ding.">
   <meta name="theme-color" content="#ffffff">
   <title>Changsha, with frequent stops. — Moments — Ian Ding</title>
-  <link rel="stylesheet" href="../../../style.css?v=5b5dfdf9d505">
+  <link rel="stylesheet" href="../../../style.css?v=a926c8e806d5">
   <link rel="stylesheet" href="../../album.css?v=c810887dd028">
   <script src="../../../glass-effects.js?v=7fb723ad3620" defer></script>
   <script src="../../album.js?v=cd3367af782a" defer></script>
   <script src="../../../community-config.js?v=df36de500a9f" defer></script>
   <script src="../../../community.js?v=bd4cc1025294" defer></script>
+  <script src="../../../creeper.js?v=dd2efd1659c4" defer></script>
   <!-- Generated site metadata -->
   <link rel="icon" type="image/svg+xml" href="../../../image/site-icon.svg">
   <link rel="canonical" href="https://iianding.github.io/moments/changsha/2024-04-14/">
@@ -194,17 +195,18 @@
       </div>
       <div class="footer-base">
         <span>&copy; Ian Ding</span>
-        <div class="creeper-status" lang="en">
-          <img class="creeper-icon" src="../../../image/creeper.svg" alt="" width="24" height="24">
-          <div class="creeper-details">
-            <div class="creeper-meter">
-              <span class="creeper-percent" aria-hidden="true">0%</span>
-              <div class="creeper-track" role="progressbar" aria-label="World destruction progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                <span class="creeper-fill"></span>
-              </div>
-            </div>
-            <span class="creeper-caption">Blowing up the world (0%)</span>
-          </div>
+        <div class="creeper-control" id="creeper">
+          <button class="creeper-status glass-surface" type="button" data-creeper-button disabled>
+            <img class="creeper-icon" src="../../../image/creeper.svg" alt="" width="28" height="28">
+            <span class="creeper-details">
+              <span class="creeper-caption">Click to blow up the world</span>
+              <span class="creeper-meter" aria-hidden="true">
+                <span class="creeper-track"><span class="creeper-fill"></span></span>
+                <span class="creeper-percent">0%</span>
+              </span>
+            </span>
+          </button>
+          <span class="visually-hidden" role="status" data-creeper-status></span>
         </div>
       </div>
     </footer>
